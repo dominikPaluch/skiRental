@@ -30,15 +30,15 @@ export class CartStore {
                 product,
                 quantity
             }
-        })
+        });
     }
 
     removeFromCart(payload) {
-        console.log('remove,', payload)
+        console.log('remove,', payload);
         this.store.dispatch({
             type: ActionTypes.REMOVE_FROM_CART,
             payload: payload
-        })
+        });
     }
 
 }

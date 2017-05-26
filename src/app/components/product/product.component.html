@@ -10,29 +10,32 @@
     [pagination]="false"
     [indexColumn]="false"
     [selectColumn]="false"
-    [multiSelect]="true"
-  >
+    [multiSelect]="false">
     <data-table-column
       property="product.name"
       header="Zdjęcie"
       width="120px">
       <ng-template #dataTableCell let-item="item">
-        <img width="120" height="120" src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
+        <img (click)="clickedProduct(item)" width="120" height="120"
+             src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
       </ng-template>
     </data-table-column>
     <data-table-column
       property="name"
       header="Nazwa"
-      sortable="true">
+      sortable="true"
+      width=30%>
     </data-table-column>
     <data-table-column
       property="size"
-      header="Rozmiar">
+      header="Rozmiar"
+      width=15%>
     </data-table-column>
     <data-table-column
       property="price"
       header="Cena(PLN)"
-      sortable="true">
+      sortable="true"
+      width=15%>
     </data-table-column>
     <data-table-column
       header="Dodaj do koszyka">
@@ -42,10 +45,11 @@
       <ng-template #dataTableCell let-item="item">
         <div style="display: flex">
           <span class="padding-right-5">Ilość: </span>
-          <input type="number" [(ngModel)]="item.quantity">
+          <input type="number" [(ngModel)]="quantity" >
         </div>
         <button (click)="addToCart(item)" class="btn btn-sm btn-primary">Dodaj</button>
         <button (click)="clickedProduct(item)" class="btn btn-sm btn-success">Szczegóły</button>
+        <h2>{{quantity}} details!</h2>
       </ng-template>
     </data-table-column>
   </data-table>
