@@ -15,7 +15,7 @@ import {COMPONENTS} from './components';
 import { SERVICES } from './services';
 import { reducer } from './store/reducers';
 import { CartStore } from './store/cart.store';
-
+import { DataTableModule } from 'angular-2-data-table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +27,7 @@ import { CartStore } from './store/cart.store';
     HttpModule,
     MaterialModule,
     AppRoutingModule,
+    DataTableModule,
 
     /**
      * StoreModule.provideStore is imported once in the root module, accepting a reducer
@@ -59,9 +60,9 @@ import { CartStore } from './store/cart.store';
     // EffectsModule.run(CollectionEffects),
 
   ],
-  // If service is specified in app.module (this file), then all components have access to the SAME instance of that service 
+  // If service is specified in app.module (this file), then all components have access to the SAME instance of that service
   // This is useful when exactly one object is needed to coordinate actions across the system.
-  // This is an example of the singleton pattern (Design pattern that restricts the instantiation of a class to one object) 
+  // This is an example of the singleton pattern (Design pattern that restricts the instantiation of a class to one object)
   providers: [SERVICES, CartStore],
   bootstrap: [AppComponent]
 })
