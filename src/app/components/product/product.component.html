@@ -37,10 +37,15 @@
     <data-table-column
       header="Dodaj do koszyka">
       <ng-template #dataTableHeader let-item="item">
-        <i>Actions</i>
+        <p>Dodaj do koszyka</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <button (click)="carClicked(item)" class="btn btn-sm btn-default">Buy</button>
+        <div style="display: flex">
+          <span class="padding-right-5">Ilość: </span>
+          <input type="number" [(ngModel)]="item.quantity">
+        </div>
+        <button (click)="addToCart(item)" class="btn btn-sm btn-primary">Dodaj</button>
+        <button (click)="clickedProduct(item)" class="btn btn-sm btn-success">Szczegóły</button>
       </ng-template>
     </data-table-column>
   </data-table>
