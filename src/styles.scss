@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  //background: #f7fafc url('img/snow3.png') repeat;
+  margin: 0px;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ecfaff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover, a:visited, a:active, a:focus {
+  text-decoration: none;
+}
+
+ul, ol, li ,p{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.btn-primary {
+    background-color: #585b6f;
+}
+
+.btn-success {
+    background-color:  #929abf;
+}
+
+.btn-danger {
+    background-color: #ce7a7d;
+}
+
+.padding-right-5 {
+    padding-right: 5px;
+}
