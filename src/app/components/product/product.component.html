@@ -1,47 +1,47 @@
 <div style="margin: auto; max-width: 1000px;">
-  <div>
-    <span>Cena od: </span>
-    <input type="number" [(ngModel)]="price" class="form-control input-sm" style="display: inline-block; width: 100px">
-  </div>
+  <!--<div>-->
+  <!--<span>Cena od: </span>-->
+  <!--<input type="number" [(ngModel)]="yearLimit" class="form-control input-sm" style="display: inline-block; width: 100px">-->
+  <!--</div>-->
   <data-table
-    [items]="cars"
-    [itemCount]="carCount"
-    (reload)="reloadCars($event)"
+    [items]="products"
+    [itemCount]="quantity"
 
     [pagination]="false"
     [indexColumn]="false"
-    [selectColumn]="true"
+    [selectColumn]="false"
     [multiSelect]="true"
-    [rowColors]="rowColors"
   >
     <data-table-column
-      property="year"
-      header="Year"
+      property="product.name"
+      header="Zdjęcie"
+      width="120px">
+      <ng-template #dataTableCell let-item="item">
+        <img width="120" height="120" src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
+      </ng-template>
+    </data-table-column>
+    <data-table-column
+      property="name"
+      header="Nazwa"
       sortable="true">
-      <template #dataTableCell let-item="item">
-        <input type="number" [(ngModel)]="item.year" class="form-control input-sm" style="width: 75px"/>
-      </template>
     </data-table-column>
     <data-table-column
-      property="maker"
-      header="Maker">
-    </data-table-column>
-    <data-table-column
-      property="model"
-      header="Model">
+      property="size"
+      header="Rozmiar">
     </data-table-column>
     <data-table-column
       property="price"
-      header="Price ($)">
+      header="Cena(PLN)"
+      sortable="true">
     </data-table-column>
     <data-table-column
-      header="Actions">
-      <template #dataTableHeader let-item="item">
+      header="Dodaj do koszyka">
+      <ng-template #dataTableHeader let-item="item">
         <i>Actions</i>
-      </template>
-      <template #dataTableCell let-item="item">
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
         <button (click)="carClicked(item)" class="btn btn-sm btn-default">Buy</button>
-      </template>
+      </ng-template>
     </data-table-column>
   </data-table>
   <div>
@@ -65,7 +65,7 @@
           </md-card-title>
         </md-card-header>
 
-        <img width="220" height="220" src={{product.src}} />
+        <img width="220" height="220" src={{product.src}}/>
         <md-card-content>
           <p>{{product.info}}</p>
         </md-card-content>
