@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './components/product/product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { LoginComponent } from './components/login/login.component';
+import {LoginComponent} from './registration/login/index';
+import {RegisterComponent} from './registration/register/index';
 
 const routes: Routes = [
   {
@@ -21,8 +21,8 @@ const routes: Routes = [
     component: CartComponent
   },
   {
-    path: 'registration',
-    component: RegistrationComponent
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'login',
