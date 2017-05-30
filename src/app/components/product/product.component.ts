@@ -31,8 +31,9 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product) {
-    console.log(this.quantity);
+    console.log('weszlo');
     // this.quantity = ile;
+
     this.cartStore.addToCart(product, this.quantity || 1);
   }
 

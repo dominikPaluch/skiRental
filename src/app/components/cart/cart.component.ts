@@ -55,16 +55,4 @@ export class CartComponent implements OnInit, OnDestroy {
       return acc += item;
     }, 0);
   }
-
-  // OnInit() {
-  //   this.cartSubscription = this.cartStore.getState().subscribe(res => {
-  //     this.cart = res.products;
-  //     this.getTotalPrice();
-  //   });
-  // }
-  //
-  // OnDestroy() {
-  //   this.cartSubscription.unsubscribe();
-  // }
-
 }

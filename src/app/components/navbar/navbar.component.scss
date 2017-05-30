@@ -6,12 +6,22 @@
 }
 
 .glyphicon {
-  font-size: 30px;
+  font-size: 20px;
+  top: 5px;
+  line-height: 0;
 }
 
 .navbar-default .navbar-nav > li > a {
   font-size: 16px;
   color: white;
+  display: block;
+  transition: all 0.7s ease;
+  padding: 21px 20px;
+
+  &:hover{
+    background-color: #4195fc;
+    transition: all 0.7s ease;
+  }
 }
 
 .navbar-default .navbar-brand {

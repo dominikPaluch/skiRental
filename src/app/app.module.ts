@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { MaterialModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { DBModule } from '@ngrx/db';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
@@ -16,10 +14,13 @@ import { SERVICES } from './services';
 import { reducer } from './store/reducers';
 import { CartStore } from './store/cart.store';
 import { DataTableModule } from 'angular-2-data-table';
+import { LoginComponent } from './components/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    COMPONENTS
+    COMPONENTS,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
