@@ -6,6 +6,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { CartComponent } from './components/cart/cart.component';
 import {LoginComponent} from './registration/login/index';
 import {RegisterComponent} from './registration/register/index';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
   {

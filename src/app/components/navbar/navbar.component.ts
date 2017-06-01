@@ -6,6 +6,7 @@ import {UserService} from '../../registration/_services/index';
 import {AlertService, AuthenticationService} from '../../registration/_services/index';
 import {LoginComponent} from '../../registration/login/login.component';
 import {ProductComponent} from "../product/product.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'navbar',
@@ -25,9 +26,14 @@ export class NavBarComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private cartStore: CartStore,
-              private userService: UserService) {
+              private userService: UserService,
+              private router: Router) {
 
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    router.events.subscribe(() => {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      console.log('user:' + this.currentUser);
+    });
   }
 
   getTotalPrice() {
