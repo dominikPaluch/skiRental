@@ -5,7 +5,8 @@ import {Router} from '@angular/router';
 import {Product} from '../../models/Product';
 import {ProductService} from '../../services/product.service';
 import {CartStore} from '../../store/cart.store';
-
+import {User} from '../../registration/_models/index';
+import {UserService} from '../../registration/_services/index';
 
 @Component({
   selector: 'product',
@@ -14,11 +15,18 @@ import {CartStore} from '../../store/cart.store';
 })
 
 export class ProductComponent implements OnInit {
-  @ViewChild(DataTable) carsTable: DataTable;
-  @Input() quantity: number;
   products: Product[];
+  quantity: number;
+  priceLimit = 100;
 
-  constructor(private productService: ProductService, private router: Router, private cartStore: CartStore) {
+  currentUser: User;
+  users: User[] = [];
+
+  constructor(private productService: ProductService,
+              private router: Router,
+              private cartStore: CartStore,
+              private userService: UserService) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit(): void {
@@ -31,13 +39,14 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product) {
-    console.log('weszlo');
-    // this.quantity = ile;
-
     this.cartStore.addToCart(product, this.quantity || 1);
   }
 
   getProductData() {
     this.productService.getProducts().then(products => this.products = products);
+  }
+
+  rowColors(product) {
+    if (product.year >= this.priceLimit) {return 'rgb(255, 255, 197)'; }
   }
 }

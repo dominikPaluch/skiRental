@@ -1,8 +1,9 @@
+<h1>Witaj {{currentUser.firstName}}</h1>
 <div style="margin: auto; max-width: 1000px;">
-  <!--<div>-->
-  <!--<span>Cena od: </span>-->
-  <!--<input type="number" [(ngModel)]="yearLimit" class="form-control input-sm" style="display: inline-block; width: 100px">-->
-  <!--</div>-->
+  <div>
+    <span>Cena powyzej: </span>
+    <input type="number" [(ngModel)]="priceLimit" class="form-control input-sm" style="display: inline-block; width: 100px">
+  </div>
   <data-table
     [items]="products"
     [itemCount]="quantity"
@@ -10,7 +11,8 @@
     [pagination]="false"
     [indexColumn]="false"
     [selectColumn]="false"
-    [multiSelect]="false">
+    [multiSelect]="false"
+    [rowColors]="rowColors">
     <data-table-column
       property="product.name"
       header="Zdjęcie"
@@ -29,6 +31,7 @@
     <data-table-column
       property="size"
       header="Rozmiar"
+      sortable="true"
       width=15%>
     </data-table-column>
     <data-table-column
@@ -36,6 +39,9 @@
       header="Cena(PLN)"
       sortable="true"
       width=15%>
+      <ng-template #dataTableCell let-item="item">
+        <input type="number" [(ngModel)]="item.price" class="form-control input-sm" style="width: 75px"/>
+      </ng-template>
     </data-table-column>
     <data-table-column
       header="Dodaj do koszyka">
@@ -53,41 +59,66 @@
       </ng-template>
     </data-table-column>
   </data-table>
-  <div>
-    <div>
-      <b>Selected:</b>
-      <span [textContent]="carsTable.selectedRows.length"></span>
-    </div>
-    <div *ngFor="let selected of carsTable.selectedRows">
-      <span [textContent]="selected.item.model"></span>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div *ngFor="let product of products">
-    <div class="col-xs-12">
-      <md-card class="example-card">
-        <md-card-header>
-          <div md-card-avatar class="example-header-image"></div>
-          <md-card-title>
-            <span class="badge">{{product.id}}</span> <strong>{{product.name}}</strong>
-          </md-card-title>
-        </md-card-header>
+  <!--<div>-->
+    <!--<div>-->
+      <!--<b>Selected:</b>-->
+      <!--<span [textContent]="carsTable.selectedRows.length"></span>-->
+    <!--</div>-->
+    <!--<div *ngFor="let selected of carsTable.selectedRows">-->
+      <!--<span [textContent]="selected.item.model"></span>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+  <!--<div *ngFor="let product of products">-->
+    <!--<div class="col-xs-12">-->
+      <!--<md-card class="example-card">-->
+        <!--<md-card-header>-->
+          <!--<div md-card-avatar class="example-header-image"></div>-->
+          <!--<md-card-title>-->
+            <!--<span class="badge">{{product.id}}</span> <strong>{{product.name}}</strong>-->
+          <!--</md-card-title>-->
+        <!--</md-card-header>-->
 
-        <img width="220" height="220" src={{product.src}}/>
-        <md-card-content>
-          <p>{{product.info}}</p>
-        </md-card-content>
-        <md-card-actions>
-          <div style="display: flex">
-            <span class="padding-right-5">Quantity: </span>
-            <input type="number" #aa [(ngModel)]="quantity">
-          </div>
-          <h1 class="badge">${{product.price}}</h1>
-          <button (click)="addToCart(product)" class="btn btn-sm btn-primary">Add to Cart</button>
-          <button (click)="clickedProduct(product)" class="btn btn-sm btn-success">Details</button>
-        </md-card-actions>
-      </md-card>
-    </div>
-  </div>
+        <!--<img width="220" height="220" src={{product.src}}/>-->
+        <!--<md-card-content>-->
+          <!--<p>{{product.info}}</p>-->
+        <!--</md-card-content>-->
+        <!--<md-card-actions>-->
+          <!--<div style="display: flex">-->
+            <!--<span class="padding-right-5">Quantity: </span>-->
+            <!--<input type="number" #aa [(ngModel)]="quantity">-->
+          <!--</div>-->
+          <!--<h1 class="badge">${{product.price}}</h1>-->
+          <!--<button (click)="addToCart(product)" class="btn btn-sm btn-primary">Add to Cart</button>-->
+          <!--<button (click)="clickedProduct(product)" class="btn btn-sm btn-success">Details</button>-->
+        <!--</md-card-actions>-->
+      <!--</md-card>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>
+
+<!--nowy-->
+<div style="margin: auto; max-width: 600px;">
+  <data-table
+    [items]="products"
+    [itemCount]="quantity"
+
+    [pagination]="false"
+    [indexColumn]="false"
+    [selectColumn]="false"
+    [multiSelect]="false">
+    <data-table-column
+      property="name"
+      header="Nazwa"
+      sortable="true"
+      width=30%>
+    </data-table-column>
+    <data-table-column
+      property="size"
+      header="Rozmiar"
+      sortable="true"
+      width=15%>
+    </data-table-column>
+  </data-table>
 </div>

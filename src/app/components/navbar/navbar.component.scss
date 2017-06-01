@@ -34,3 +34,21 @@
 .navbar-default .navbar-nav > .welcome > a{
   color: gold;
 }
+
+.thumbnail {
+  display: block;
+  padding: 5px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+
+  .badge {
+    background-color: rgba(43, 230, 0, 0.73);
+  }
+}
