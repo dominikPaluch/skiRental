@@ -39,7 +39,7 @@
       sortable="true"
       width=15%>
       <ng-template #dataTableCell let-item="item">
-        <input type="number" [(ngModel)]="item.price" class="form-control input-sm" style="width: 75px"/>
+        <input type="number" [(ngModel)]="item.price" min="0" class="form-control input-sm" style="width: 75px"/>
       </ng-template>
     </data-table-column>
     <data-table-column
@@ -50,11 +50,10 @@
       <ng-template #dataTableCell let-item="item">
         <div style="display: flex">
           <span class="padding-right-5">Ilość: </span>
-          <input type="number" [(ngModel)]="quantity" >
-        </div>
+          <input type="number" [(ngModel)]="quantity" min="0">
+        </div><br/>
         <button (click)="addToCart(item)" class="btn btn-sm btn-primary">Dodaj</button>
         <button (click)="clickedProduct(item)" class="btn btn-sm btn-success">Szczegóły</button>
-        <h5>{{quantity}} details!</h5>
       </ng-template>
     </data-table-column>
   </data-table>
