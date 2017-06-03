@@ -21,13 +21,24 @@
     </data-table-column>
     <data-table-column
       property="date"
-      header="Data"
-      width=25%>
+      header="Od"
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
-        <p class="center">Data</p>
+        <p class="center">Od</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <p class="center">{{item.date}}</p>
+        <p class="center">{{item.startDate}}</p>
+      </ng-template>
+    </data-table-column>
+    <data-table-column
+      property="endDate"
+      header="Do"
+      width=15%>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Do</p>
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
+        <p class="center">{{item.endDate}}</p>
       </ng-template>
     </data-table-column>
     <data-table-column
