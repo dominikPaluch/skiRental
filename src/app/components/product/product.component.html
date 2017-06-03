@@ -50,7 +50,8 @@
           <span class="padding-right-5">Ilość: </span>
           <input type="number" [(ngModel)]="quantity" min="0">
         </div><br/>
-        <button (click)="addToCart(item)" class="btn btn-sm btn-primary">Dodaj</button>
+        <button (click)="addToCart(item)" class="btn btn-sm btn-primary" *ngIf="currentUser">Dodaj</button>
+        <a routerLink="/register" class="btn btn-sm btn-primary" *ngIf="!currentUser">Dodaj</a>
         <button (click)="clickedProduct(item)" class="btn btn-sm btn-success">Szczegóły</button>
       </ng-template>
     </data-table-column>

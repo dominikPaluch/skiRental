@@ -26,7 +26,10 @@ export class ProductComponent implements OnInit {
               private router: Router,
               private cartStore: CartStore,
               private userService: UserService) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+      router.events.subscribe(() => {
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      });
   }
 
   ngOnInit(): void {

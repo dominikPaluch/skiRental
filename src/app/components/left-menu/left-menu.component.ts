@@ -12,8 +12,6 @@ export class LeftMenuComponent implements OnInit {
     currentUser: User;
 
     constructor(private router: Router) {
-
-
       router.events.subscribe(() => {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
       });
