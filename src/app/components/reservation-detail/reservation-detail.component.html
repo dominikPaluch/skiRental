@@ -1,6 +1,8 @@
 <div *ngIf="selectedReservation">
   <h4>Szczegóły rezerwacji nr: {{selectedReservation.id}}</h4>
-  <strong>Data:</strong> {{selectedReservation.date}}<br/>
+  <strong>Termin:</strong><br/>
+  <strong>Od:</strong> {{selectedReservation.startDate}} <br/>
+  <strong>Do:</strong> {{selectedReservation.endDate}} <br/><br/>
   <strong>Cena:</strong> {{selectedReservation.price}} zł<br/>
   <br/>
   <strong>Zarezerwowane produkty:</strong>
@@ -14,8 +16,7 @@
       header="Zdjęcie"
       width="120px">
       <ng-template #dataTableCell let-item="item">
-        <img (click)="clickedProduct(item)" width="120" height="120"
-             src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
+        <img width="120" height="120" src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
       </ng-template>
     </data-table-column>
     <data-table-column
