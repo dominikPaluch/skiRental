@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Reservations } from '../models/reservation-data';
+import { ReservationsRemoved1 } from '../models/reservation-removed-data';
+import { ReservationsRemoved2 } from '../models/reservation-removed-data';
 import { Reservation } from '../models/Reservation';
 import { Observable, Subject } from 'rxjs';
 
@@ -16,12 +18,18 @@ export class ReservationService {
     }
 
     getReservations() {
-        return Promise.resolve(Reservations)
+        return Promise.resolve(Reservations);
+    }
+
+    getReservationsRemoved(id) {
+      if(id===1)
+        return Promise.resolve(ReservationsRemoved1);
+      else
+        return Promise.resolve(ReservationsRemoved2);
     }
 
     getReservation(id) {
         return this.getReservations()
-                    .then(reservations => reservations.find(reservation => reservation.id === id))
+                    .then(reservations => reservations.find(reservation => reservation.id === id));
     }
-
 }

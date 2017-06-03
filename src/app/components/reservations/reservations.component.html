@@ -27,7 +27,7 @@
     <data-table-column
       header="Akcje">
       <ng-template #dataTableCell let-item="item">
-        <!--<button (click)="delete(item)" class="btn btn-sm btn-primary">Zrezygnuj</button>-->
+        <button (click)="remove(item.id)" class="btn btn-sm btn-primary">Zrezygnuj</button>
         <button (click)="clickedReservation(item)" class="btn btn-sm btn-success">Szczegóły</button>
       </ng-template>
     </data-table-column>

@@ -30,4 +30,8 @@ export class ReservationsComponent implements OnInit {
     const link = ['/reservation-detail', reservation.id];
     this.router.navigate(link);
   }
+
+  remove(id) {
+    this.reservationService.getReservationsRemoved(id).then(reservations => this.reservations = reservations);
+  }
 }
