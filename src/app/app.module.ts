@@ -15,7 +15,6 @@ import {reducer} from './store/reducers';
 import {CartStore} from './store/cart.store';
 import {DataTableModule} from 'angular-2-data-table';
 
-
 // regiestration
 import {fakeBackendProvider} from './registration/_helpers/index';
 import {MockBackend, MockConnection} from '@angular/http/testing';

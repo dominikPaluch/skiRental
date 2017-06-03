@@ -1,0 +1,46 @@
+<div style="margin: auto; max-width: 1000px;">
+  <div>
+    <h3>Moje rezerwacje</h3>
+  </div>
+  <data-table
+    [items]="reservations"
+    [pagination]="false"
+    [indexColumn]="false"
+    [selectColumn]="false"
+    [multiSelect]="false"
+    [rowColors]="rowColors">
+    <data-table-column
+      property="id"
+      header="Id"
+      width="15%">
+      <ng-template #dataTableCell let-item="item">
+        <output type="text">{{item.id}}</output>
+      </ng-template>
+    </data-table-column>
+    <data-table-column
+      property="date"
+      header="Data"
+      sortable="true"
+      width=25%>
+      <ng-template #dataTableCell let-item="item">
+        <output type="text">{{item.date}}</output>
+      </ng-template>
+    </data-table-column>
+    <data-table-column
+      property="price"
+      header="Cena (PLN)"
+      sortable="true"
+      width=15%>
+      <ng-template #dataTableCell let-item="item">
+        <output type="number">{{item.price}}</output>
+      </ng-template>
+    </data-table-column>
+    <data-table-column
+      header="Akcje">
+      <ng-template #dataTableCell let-item="item">
+        <!--<button (click)="delete(item)" class="btn btn-sm btn-primary">Zrezygnuj</button>-->
+        <button (click)="clickedReservation(item)" class="btn btn-sm btn-success">Szczegóły</button>
+      </ng-template>
+    </data-table-column>
+  </data-table>
+</div>
