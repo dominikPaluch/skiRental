@@ -1,7 +1,8 @@
 <div style="margin: auto; max-width: 1000px;">
   <div>
     <span>Cena powyzej: </span>
-    <input type="number" [(ngModel)]="priceLimit" class="form-control input-sm" style="display: inline-block; width: 100px">
+    <input type="number" [(ngModel)]="priceLimit" min="0" class="form-control input-sm" style="display: inline-block; width: 50px">
+    <span> zł</span>
   </div>
   <data-table
     [items]="products"
@@ -24,22 +25,19 @@
     <data-table-column
       property="name"
       header="Nazwa"
-      sortable="true"
       width=30%>
     </data-table-column>
     <data-table-column
       property="size"
       header="Rozmiar"
-      sortable="true"
       width=15%>
     </data-table-column>
     <data-table-column
       property="price"
-      header="Cena(PLN)"
-      sortable="true"
+      header="Cena (zł)"
       width=15%>
       <ng-template #dataTableCell let-item="item">
-        <input type="number" [(ngModel)]="item.price" class="form-control input-sm" style="width: 75px"/>
+        <input type="number" [(ngModel)]="item.price" min="0" class="form-control input-sm" style="width: 75px"/>
       </ng-template>
     </data-table-column>
     <data-table-column
@@ -50,11 +48,11 @@
       <ng-template #dataTableCell let-item="item">
         <div style="display: flex">
           <span class="padding-right-5">Ilość: </span>
-          <input type="number" [(ngModel)]="quantity" >
-        </div>
-        <button (click)="addToCart(item)" class="btn btn-sm btn-primary">Dodaj</button>
+          <input type="number" [(ngModel)]="quantity" min="0">
+        </div><br/>
+        <button (click)="addToCart(item)" class="btn btn-sm btn-primary" *ngIf="currentUser">Dodaj</button>
+        <a routerLink="/register" class="btn btn-sm btn-primary" *ngIf="!currentUser">Dodaj</a>
         <button (click)="clickedProduct(item)" class="btn btn-sm btn-success">Szczegóły</button>
-        <h5>{{quantity}} details!</h5>
       </ng-template>
     </data-table-column>
   </data-table>
