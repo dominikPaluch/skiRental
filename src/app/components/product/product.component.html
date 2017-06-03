@@ -1,7 +1,8 @@
 <div style="margin: auto; max-width: 1000px;">
   <div>
     <span>Cena powyzej: </span>
-    <input type="number" [(ngModel)]="priceLimit" min="0" class="form-control input-sm" style="display: inline-block; width: 50px">
+    <input type="number" [(ngModel)]="priceLimit" min="0" class="form-control input-sm"
+           style="display: inline-block; width: 50px">
     <span> zł</span>
   </div>
   <data-table
@@ -11,12 +12,14 @@
     [pagination]="false"
     [indexColumn]="false"
     [selectColumn]="false"
-    [multiSelect]="false"
-    [rowColors]="rowColors">
+    [multiSelect]="false">
     <data-table-column
       property="product.name"
       header="Zdjęcie"
       width="120px">
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Zdjęcie</p>
+      </ng-template>
       <ng-template #dataTableCell let-item="item">
         <img (click)="clickedProduct(item)" width="120" height="120"
              src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
@@ -26,96 +29,58 @@
       property="name"
       header="Nazwa"
       width=30%>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Nazwa</p>
+        <ng-template #dataTableCell let-item="item">
+          <p class="center">{{item.name}}</p>
+        </ng-template>
+      </ng-template>
     </data-table-column>
     <data-table-column
       property="size"
       header="Rozmiar"
       width=15%>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Rozmiar (cm)</p>
+      </ng-template>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Rozmiar (cm)</p>
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
+        <p class="center">{{item.size}}</p>
+      </ng-template>
     </data-table-column>
     <data-table-column
+      id="a"
       property="price"
       header="Cena (zł)"
       width=15%>
-      <ng-template #dataTableCell let-item="item">
-        <input type="number" [(ngModel)]="item.price" min="0" class="form-control input-sm" style="width: 75px"/>
-      </ng-template>
-    </data-table-column>
-    <data-table-column
-      header="Dodaj do koszyka">
+      Rozmiar (cm)
       <ng-template #dataTableHeader let-item="item">
-        <p>Dodaj do koszyka</p>
+        <p class="center">Cena (zł)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <div style="display: flex">
-          <span class="padding-right-5">Ilość: </span>
-          <input type="number" [(ngModel)]="quantity" min="0">
-        </div><br/>
-        <button (click)="addToCart(item)" class="btn btn-sm btn-primary" *ngIf="currentUser">Dodaj</button>
-        <a routerLink="/register" class="btn btn-sm btn-primary" *ngIf="!currentUser">Dodaj</a>
-        <button (click)="clickedProduct(item)" class="btn btn-sm btn-success">Szczegóły</button>
+        <p class="center">{{item.price}}</p>
       </ng-template>
     </data-table-column>
-  </data-table>
-  <!--<div>-->
-    <!--<div>-->
-      <!--<b>Selected:</b>-->
-      <!--<span [textContent]="carsTable.selectedRows.length"></span>-->
-    <!--</div>-->
-    <!--<div *ngFor="let selected of carsTable.selectedRows">-->
-      <!--<span [textContent]="selected.item.model"></span>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!--<div class="row">-->
-  <!--<div *ngFor="let product of products">-->
-    <!--<div class="col-xs-12">-->
-      <!--<md-card class="example-card">-->
-        <!--<md-card-header>-->
-          <!--<div md-card-avatar class="example-header-image"></div>-->
-          <!--<md-card-title>-->
-            <!--<span class="badge">{{product.id}}</span> <strong>{{product.name}}</strong>-->
-          <!--</md-card-title>-->
-        <!--</md-card-header>-->
-
-        <!--<img width="220" height="220" src={{product.src}}/>-->
-        <!--<md-card-content>-->
-          <!--<p>{{product.info}}</p>-->
-        <!--</md-card-content>-->
-        <!--<md-card-actions>-->
-          <!--<div style="display: flex">-->
-            <!--<span class="padding-right-5">Quantity: </span>-->
-            <!--<input type="number" #aa [(ngModel)]="quantity">-->
-          <!--</div>-->
-          <!--<h1 class="badge">${{product.price}}</h1>-->
-          <!--<button (click)="addToCart(product)" class="btn btn-sm btn-primary">Add to Cart</button>-->
-          <!--<button (click)="clickedProduct(product)" class="btn btn-sm btn-success">Details</button>-->
-        <!--</md-card-actions>-->
-      <!--</md-card>-->
-    <!--</div>-->
-  <!--</div>-->
-</div>
-
-<!--nowy-->
-<div style="margin: auto; max-width: 600px;">
-  <data-table
-    [items]="products"
-    [itemCount]="quantity"
-
-    [pagination]="false"
-    [indexColumn]="false"
-    [selectColumn]="false"
-    [multiSelect]="false">
     <data-table-column
-      property="name"
-      header="Nazwa"
-      sortable="true"
-      width=30%>
-    </data-table-column>
-    <data-table-column
-      property="size"
-      header="Rozmiar"
-      sortable="true"
-      width=15%>
+      header="Dodaj do koszyka"
+      width="25%">
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Dodaj do koszyka</p>
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
+        <div class="input-product" style="display: flex">
+          <span class="padding-right-5">Ilość: </span>
+          <input class="input-product" type="number" [(ngModel)]="quantity" min="0">
+        </div>
+        <br/>
+        <div class="center-button">
+          <button (click)="addToCart(item)" class="btn btn-sm btn-success" *ngIf="currentUser">Dodaj</button>
+          <a routerLink="/register" class="btn btn-sm btn-primary" *ngIf="!currentUser">Dodaj</a>
+          <button (click)="clickedProduct(item)" class="btn btn-sm btn-primary">Szczegóły</button>
+        </div>
+      </ng-template>
     </data-table-column>
   </data-table>
 </div>

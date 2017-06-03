@@ -13,6 +13,9 @@
     <data-table-column
       header="Zdjęcie"
       width="68px">
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Zdjęcie</p>
+      </ng-template>
       <ng-template #dataTableCell let-item="item">
         <img (click)="clickedProduct(item)" width="120" height="120"
              src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
@@ -22,16 +25,34 @@
       property="name"
       header="Nazwa"
       width=25%>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Nazwa</p>
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
+        <p class="center">{{item.name}}</p>
+      </ng-template>
     </data-table-column>
     <data-table-column
       property="size"
       header="Rozmiar"
       width=10%>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Rozmiar</p>
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
+        <p class="center">{{item.size}}</p>
+      </ng-template>
     </data-table-column>
     <data-table-column
       property="price"
       header="Cena (zł)"
       width=10%>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Cena (zł)</p>
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
+        <p class="center">{{item.price}}</p>
+      </ng-template>
     </data-table-column>
   </data-table>
   <br/>
