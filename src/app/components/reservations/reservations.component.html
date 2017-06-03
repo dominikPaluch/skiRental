@@ -13,27 +13,16 @@
       property="id"
       header="Id"
       width="15%">
-      <ng-template #dataTableCell let-item="item">
-        <output type="text">{{item.id}}</output>
-      </ng-template>
     </data-table-column>
     <data-table-column
       property="date"
       header="Data"
-      sortable="true"
       width=25%>
-      <ng-template #dataTableCell let-item="item">
-        <output type="text">{{item.date}}</output>
-      </ng-template>
     </data-table-column>
     <data-table-column
       property="price"
-      header="Cena (PLN)"
-      sortable="true"
+      header="Cena (zł)"
       width=15%>
-      <ng-template #dataTableCell let-item="item">
-        <output type="number">{{item.price}}</output>
-      </ng-template>
     </data-table-column>
     <data-table-column
       header="Akcje">

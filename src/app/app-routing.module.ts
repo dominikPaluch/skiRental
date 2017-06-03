@@ -8,6 +8,7 @@ import {LoginComponent} from './registration/login/index';
 import {RegisterComponent} from './registration/register/index';
 import {AppComponent} from './app.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
+import { ReservationDetailComponent } from './components/reservation-detail/reservation-detail.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'reservations',
     component: ReservationsComponent
+  },
+  {
+    path: 'reservation-detail/:id',
+    component: ReservationDetailComponent
   }
 ];
 

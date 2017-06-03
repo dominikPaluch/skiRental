@@ -1,0 +1,39 @@
+<div *ngIf="selectedReservation">
+  <h4>Szczegóły rezerwacji nr: {{selectedReservation.id}}</h4>
+  <strong>Data:</strong> {{selectedReservation.date}}<br/>
+  <strong>Cena:</strong> {{selectedReservation.price}} zł<br/>
+  <br/>
+  <strong>Zarezerwowane produkty:</strong>
+  <data-table
+    [items]="selectedReservation.products"
+    [pagination]="false"
+    [indexColumn]="false"
+    [selectColumn]="false"
+    [multiSelect]="false">
+    <data-table-column
+      header="Zdjęcie"
+      width="120px">
+      <ng-template #dataTableCell let-item="item">
+        <img (click)="clickedProduct(item)" width="120" height="120"
+             src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
+      </ng-template>
+    </data-table-column>
+    <data-table-column
+      property="name"
+      header="Nazwa"
+      width=15%>
+    </data-table-column>
+    <data-table-column
+      property="size"
+      header="Rozmiar"
+      width=15%>
+    </data-table-column>
+    <data-table-column
+      property="price"
+      header="Cena (zł)"
+      width=15%>
+    </data-table-column>
+  </data-table>
+  <br/>
+  <button (click)="goBack()" class="btn btn-danger">Back</button>
+</div>

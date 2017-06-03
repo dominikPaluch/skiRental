@@ -2,7 +2,7 @@
   <div>
     <span>Cena powyzej: </span>
     <input type="number" [(ngModel)]="priceLimit" min="0" class="form-control input-sm" style="display: inline-block; width: 50px">
-    <span> PLN</span>
+    <span> zł</span>
   </div>
   <data-table
     [items]="products"
@@ -25,19 +25,16 @@
     <data-table-column
       property="name"
       header="Nazwa"
-      sortable="true"
       width=30%>
     </data-table-column>
     <data-table-column
       property="size"
       header="Rozmiar"
-      sortable="true"
       width=15%>
     </data-table-column>
     <data-table-column
       property="price"
-      header="Cena(PLN)"
-      sortable="true"
+      header="Cena (zł)"
       width=15%>
       <ng-template #dataTableCell let-item="item">
         <input type="number" [(ngModel)]="item.price" min="0" class="form-control input-sm" style="width: 75px"/>

@@ -1,0 +1,42 @@
+import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+
+import {Router} from '@angular/router';
+import {Product} from '../../models/Product';
+import { Reservation } from '../../models/Reservation';
+import { ReservationService } from '../../services/reservation.service';
+
+@Component({
+    selector: 'reservation-detail',
+    templateUrl: 'reservation-detail.component.html',
+    styleUrls: ['reservation-detail.component.scss']
+})
+
+export class ReservationDetailComponent {
+    selectedReservation:Reservation;
+    constructor(
+        private reservationService:ReservationService,
+        private route:ActivatedRoute,
+        private location:Location,
+        private router:Router
+    ) { }
+
+    // When initialized, fetch for the reservation info based on the reservation id and set it as selectedReservation
+    ngOnInit() {
+        this.route.params.forEach(param => {
+            let id = parseInt(param['id'])
+            this.reservationService.getReservation(id)
+                .then(reservation => this.selectedReservation = reservation)
+        })
+    }
+
+    goBack() {
+        this.location.back()
+    }
+
+    clickedProduct(product) {
+      const link = ['/detail', product.id];
+      this.router.navigate(link);
+    }
+}

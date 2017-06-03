@@ -9,7 +9,7 @@ import { Product } from './Product';
         info: 'Narty idealne do ...'},
       { id: 4, name: 'Narty biegowe fischer', src: '/assets/img/skis/narty-biegowki-klasyk-fischer_n43616_fibre_crown.jpg', price: 129.99, size: 190,
         info: 'Narty idealne do ...'},
-      { id: 5, name: 'Narty local hero', src: '/assets/img/skis/narty-local-hero-jr.jpg', price: 119.99, size: 170,
+      { id: 5, name: 'Narty local hero', src: '/assets/img/skis/narty-local-hero-jr.jpg', price: 109.99, size: 170,
         info: 'Narty idealne do ...'},
       { id: 6, name: 'Narty salomon x-race', src: '/assets/img/skis/narty-salomon-x-race-sw.jpg', price: 139.99, size: 160,
         info: 'Narty idealne do ...'},

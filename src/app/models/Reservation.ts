@@ -1,5 +1,8 @@
+import { Product } from './Product';
+
 export class Reservation {
-    id: string;
+    id: number;
     price: number;
     date: string;
+    products: Product[];
 };

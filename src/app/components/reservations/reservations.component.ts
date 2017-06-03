@@ -27,7 +27,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   clickedReservation(reservation) {
-    const link = ['/detail', reservation.id];
+    const link = ['/reservation-detail', reservation.id];
     this.router.navigate(link);
   }
 }
