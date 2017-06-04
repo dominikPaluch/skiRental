@@ -59,10 +59,28 @@
       </ng-template>
       <ng-template #dataTableCell let-item="item">
         <div class="center-btn">
-          <button (click)="remove(item.id)" class="btn btn-sm btn-primary left">Zrezygnuj</button>
+          <button data-target="#confirmModal" data-toggle="modal" class="btn btn-sm btn-primary left">Zrezygnuj</button>
           <button (click)="clickedReservation(item)" class="btn btn-sm btn-success right">Szczegóły</button>
         </div>
       </ng-template>
     </data-table-column>
   </data-table>
+</div>
+
+<div id="confirmModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Anulowanie rezerwacji</h4>
+      </div>
+      <div class="modal-body">
+        <p>Czy na pewno chcesz zrezygnować z rezerwacji?<br/>
+        Możesz zrezygnować z niej bezpłatnie jeszcze przez 8 dni.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="remove()" onclick="$('#confirmModal').modal('hide')">Tak, rezygnuję</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Nie, nie rezygnuję</button>
+      </div>
+    </div>
+  </div>
 </div>

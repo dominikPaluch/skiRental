@@ -31,7 +31,8 @@ export class ReservationsComponent implements OnInit {
     this.router.navigate(link);
   }
 
-  remove(id) {
-    this.reservationService.getReservationsRemoved(id).then(reservations => this.reservations = reservations);
+  remove() {
+      this.reservationService.getReservationsRemoved().then(reservations => this.reservations = reservations);
   }
+
 }
