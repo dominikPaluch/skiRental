@@ -9,6 +9,8 @@ import {RegisterComponent} from './registration/register/index';
 import {AppComponent} from './app.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { ReservationDetailComponent } from './components/reservation-detail/reservation-detail.component';
+import { OrderComponent } from './components/order/order.component';
+import {DeliveryComponent} from './components/delivery/delivery.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,14 @@ const routes: Routes = [
   {
     path: 'reservation-detail/:id',
     component: ReservationDetailComponent
+  },
+  {
+    path: 'order',
+    component: OrderComponent
+  },
+  {
+    path: 'delivery',
+    component: DeliveryComponent
   }
 ];
 

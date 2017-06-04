@@ -1,0 +1,42 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Dane dostawy</h2>
+  <form name="form" novalidate>
+    <div class="form-group">
+      <label for="address">Adres *</label>
+      <input type="text" class="form-control" name="address" required />
+    </div>
+    <div class="form-group">
+      <label for="town">Miejscowość *</label>
+      <input type="text" class="form-control" name="town" required />
+    </div>
+    <div class="form-group">
+      <label for="payment">Sposób płatności *</label><br/>
+      <select class="custom-select">
+        <option value="1" selected>Przy odbiorze </option>
+        <option value="2">Przelew </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary" (click)="confirm()" onclick="$('#infoModal').modal()">Dokonaj rezerwacji</button>
+      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      <button [routerLink]="['/']" class="btn btn-danger">Anuluj i wróć do strony głównej</button>
+    </div>
+  </form>
+</div>
+
+<div id="infoModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Dokonanie rezerwacji</h4>
+      </div>
+      <div class="modal-body">
+        <p>Dziękujemy za dokonanie rezerwacji w naszym serwisie.<br/>
+        Oczekuj na wiadomość e-mail ze szczegółami rezerwacji.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

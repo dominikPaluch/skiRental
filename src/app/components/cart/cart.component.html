@@ -25,8 +25,8 @@
         <td><h4></h4></td>
         <td><h4>Razem: {{totalPrice}} zł</h4></td>
         <td><h4></h4></td>
-        <td><button (click)="checkout()" *ngIf="cart.length > 0" class="btn btn-md btn-success">Zamow</button></td>
-        <td><button (click)="checkout()" *ngIf="cart.length <= 0" class="btn btn-md btn-success" disabled>Zamow</button></td>
+        <td><button routerLink="/order" *ngIf="cart.length > 0" class="btn btn-md btn-success">Zamow</button></td>
+        <td><button *ngIf="cart.length <= 0" class="btn btn-md btn-success" disabled>Zamow</button></td>
       </tr>
     </tbody>
 </table>

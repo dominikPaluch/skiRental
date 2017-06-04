@@ -5,6 +5,8 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {LeftMenuComponent} from './left-menu/left-menu.component';
 import {ReservationsComponent} from './reservations/reservations.component';
 import {ReservationDetailComponent} from './reservation-detail/reservation-detail.component';
+import {OrderComponent} from './order/order.component';
+import {DeliveryComponent} from './delivery/delivery.component';
 
 export const COMPONENTS = [
   CartComponent,
@@ -13,5 +15,7 @@ export const COMPONENTS = [
   ProductDetailComponent,
   LeftMenuComponent,
   ReservationsComponent,
-  ReservationDetailComponent
+  ReservationDetailComponent,
+  OrderComponent,
+  DeliveryComponent
 ];

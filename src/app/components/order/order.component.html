@@ -1,13 +1,13 @@
-<div *ngIf="selectedReservation">
-  <h4>Szczegóły rezerwacji nr: {{selectedReservation.id}}</h4>
-  <strong>Termin:</strong><br/>
-  <strong>Od:</strong> {{selectedReservation.startDate}} <br/>
-  <strong>Do:</strong> {{selectedReservation.endDate}} <br/><br/>
-  <strong>Cena:</strong> {{selectedReservation.price}} zł<br/>
-  <br/>
-  <strong>Zarezerwowane produkty:</strong>
+<div>
+  <h4>Szczegóły zamówienia</h4>
+  <strong>Termin:</strong>
+  <br/><strong>Od:</strong> {{reservation.startDate}}
+  <br/><strong>Do:</strong> {{reservation.endDate}}
+  <br/><br/><strong>Cena:</strong>  {{reservation.price}} zł
+  <br/><br/>
+  <strong>Wybrane produkty:</strong>
   <data-table
-    [items]="selectedReservation.products"
+    [items]="reservation.products"
     [pagination]="false"
     [indexColumn]="false"
     [selectColumn]="false"
@@ -57,5 +57,6 @@
     </data-table-column>
   </data-table>
   <br/>
-  <button (click)="goBack()" class="btn btn-danger">Powrót</button>
+  <button routerLink="/cart" class="btn btn-danger">Powrót do koszyka</button>
+  <button routerLink="/delivery" class="btn btn-success">Przejdź do wyboru danych dostawy</button>
 </div>

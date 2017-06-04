@@ -20,20 +20,15 @@ export class CartComponent implements OnInit, OnDestroy {
     });
   }
 
-
   public cart = [];
   public totalPrice: number;
   public totalQuantity: number;
   public cartSubscription: Subscription;
 
-  constructor(private productService: ProductService, private cartStore: CartStore)  {}
+  constructor(private productService: ProductService, private cartStore: CartStore)  { }
 
   removeProduct(product) {
     this.cartStore.removeFromCart(product);
-  }
-
-  checkout() {
-    alert('Sorry! Checkout will be coming soon!');
   }
 
   getTotalPrice() {
@@ -55,4 +50,5 @@ export class CartComponent implements OnInit, OnDestroy {
       return acc += item;
     }, 0);
   }
+
 }
