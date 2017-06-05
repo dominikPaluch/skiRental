@@ -1,3 +1,9 @@
+<div>
+  <a routerLink="/">Strona główna</a>
+  > <a routerLink="/cart"><strong>Koszyk</strong></a>
+  > <a routerLink="/order">Szczegóły zamówienia</a>
+  > <a routerLink="/delivery">Dane dostawy</a>
+</div>
 <div *ngIf="cart.length <= 0">
     <h3 class="text-center red">Brak sprzętu w koszyku!</h3>
 </div>

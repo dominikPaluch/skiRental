@@ -1,3 +1,8 @@
+<div>
+  <a routerLink="/">Strona główna</a>
+  > <a routerLink="/reservations">Moje rezerwacje</a>
+  > <a routerLink="/reservations-detail/:1"><strong>Szczegóły rezerwacji</strong></a>
+</div>
 <div *ngIf="selectedReservation">
   <h4>Szczegóły rezerwacji nr: {{selectedReservation.id}}</h4>
   <strong>Termin:</strong><br/>
