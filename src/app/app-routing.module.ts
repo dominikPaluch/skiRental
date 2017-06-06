@@ -11,6 +11,7 @@ import { ReservationsComponent } from './components/reservations/reservations.co
 import { ReservationDetailComponent } from './components/reservation-detail/reservation-detail.component';
 import { OrderComponent } from './components/order/order.component';
 import {DeliveryComponent} from './components/delivery/delivery.component';
+import {SummaryComponent} from './components/summary/summary.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: 'delivery',
     component: DeliveryComponent
+  },
+  {
+    path: 'summary',
+    component: SummaryComponent
   }
 ];
 

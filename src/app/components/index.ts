@@ -7,6 +7,7 @@ import {ReservationsComponent} from './reservations/reservations.component';
 import {ReservationDetailComponent} from './reservation-detail/reservation-detail.component';
 import {OrderComponent} from './order/order.component';
 import {DeliveryComponent} from './delivery/delivery.component';
+import {SummaryComponent} from './summary/summary.component';
 
 export const COMPONENTS = [
   CartComponent,
@@ -17,5 +18,6 @@ export const COMPONENTS = [
   ReservationsComponent,
   ReservationDetailComponent,
   OrderComponent,
-  DeliveryComponent
+  DeliveryComponent,
+  SummaryComponent
 ];

@@ -3,6 +3,7 @@
   > <a routerLink="/cart"><strong>Koszyk</strong></a>
   > <a routerLink="/order">Szczegóły zamówienia</a>
   > <a routerLink="/delivery">Dane dostawy</a>
+  > <a routerLink="/summary">Podsumowanie zamówienia</a>
 </div>
 <div *ngIf="cart.length <= 0">
     <h3 class="text-center red">Brak sprzętu w koszyku!</h3>
@@ -10,10 +11,10 @@
 <table class="table table-striped table-hover ">
     <thead>
         <tr>
-        <th>Ilosc</th>
+        <th>Ilość</th>
         <th>Nazwa</th>
         <th>Cena (zł)</th>
-        <th>Zdjecie</th>
+        <th>Zdjęcie</th>
         </tr>
     </thead>
 
@@ -28,11 +29,11 @@
 
       <tr class="warning">
         <td><h4>Razem: {{totalQuantity}}</h4></td>
-        <td><h4></h4></td>
+        <td></td>
         <td><h4>Razem: {{totalPrice}} zł</h4></td>
-        <td><h4></h4></td>
-        <td><button routerLink="/order" *ngIf="cart.length > 0" class="btn btn-md btn-success">Zamow</button></td>
-        <td><button *ngIf="cart.length <= 0" class="btn btn-md btn-success" disabled>Zamow</button></td>
+        <td></td>
+        <td><button routerLink="/order" *ngIf="cart.length > 0" class="btn btn-success">Zamów</button></td>
+        <td><button *ngIf="cart.length <= 0" class="btn btn-success" disabled>Zamów</button></td>
       </tr>
     </tbody>
 </table>
