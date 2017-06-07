@@ -60,11 +60,15 @@ export class ProductComponent implements OnInit {
     if (product.year >= this.priceLimit) {return 'rgb(255, 255, 197)'; }
   }
 
+   isFiler = false;
+
   filter() {
+    this.isFiler = true;
     this.productService.getNarty160180().then(products => this.products = products);
   }
 
   showAll() {
+    this.isFiler = false;
     this.getProductData();
   }
 }

@@ -52,8 +52,8 @@
     </div>
     <div class="col-sm-2">
       <div class="show">
-        <button type="button" class="btn btn-success" (click)="filter()">Pokaż wybrane</button>
-        <button type="button" class="btn btn-success" (click)="showAll()">Pokaż wszystkie</button>
+        <button *ngIf="!isFiler" type="button" class="btn btn-success" (click)="filter()">Wyświetl</button>
+        <button *ngIf="isFiler" type="button" class="btn btn-success" (click)="showAll()">Wszystkie</button>
       </div>
     </div>
   </div>
