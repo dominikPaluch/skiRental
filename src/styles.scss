@@ -49,3 +49,31 @@ ul, ol, li ,p{
   padding-top: 20.5px;
   padding-bottom: 0px;
 }
+
+.navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  margin-left: -15px;
+  margin-top: -15px;
+  background-color: #1c61e8;
+
+  a {
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding-left: 20px;
+  }
+}
+
+.btn-success {
+  background-color: #5cb85c;
+}
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: rgba(231, 231, 231, 0);
+}
+
+.navbar {
+  background-color: #1c61e8 !important;
+}

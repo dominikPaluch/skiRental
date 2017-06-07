@@ -22,7 +22,27 @@
 }
 
 .container {
-  width: inherit;
+  max-width: 1000px;
+  position: fixed;
+  text-align: center;
+  z-index: 1000;
+  background-color: #ecfaff;;
+  top: 100px;
+  width: 75%;
+
+  .dropdown-menu {
+    left: 20%;
+    width: 60%;
+
+    li {
+        .size {
+          float: right;
+          margin-top: 5px;
+        }
+    }
+
+
+  }
 
   .startReservation {
     float: left;
@@ -38,6 +58,15 @@
 
   .checkSize {
     float: left;
+  }
+
+  .show {
+    float: left;
+    margin-top: 35px;
+
+    button {
+      padding:5px;
+    }
   }
 }
 

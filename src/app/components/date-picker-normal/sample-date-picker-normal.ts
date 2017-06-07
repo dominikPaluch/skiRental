@@ -15,7 +15,7 @@ export class SampleDatePickerNormal implements OnInit {
     @ViewChild('mydp') mydp: MyDatePicker;
 
     private myDatePickerNormalOptions: IMyDpOptions = {
-        todayBtnTxt: 'Today',
+        todayBtnTxt: 'Dziś',
         dateFormat: 'dd mmm yyyy',
         firstDayOfWeek: 'mo',
         sunHighlight: true,
@@ -63,7 +63,7 @@ export class SampleDatePickerNormal implements OnInit {
     private selectedTextNormal: string = '';
     private border: string = 'none';
 
-    private placeholder: string = 'Select date';
+    private placeholder: string = 'Wybierz datę';
     private disabled: boolean = false;
 
     constructor() {}
