@@ -12,7 +12,8 @@
                 <input type="number" [(ngModel)]="quantity">
             </div>
             <h1 class="badge">{{selectedProduct.price}} zł</h1>
-            <button (click)="addToCart(selectedProduct)" class="btn btn-md btn-primary">Add to Cart</button>
+            <button *ngIf="currentUser" (click)="addToCart(selectedProduct)" class="btn btn-md btn-success">Dodaj do koszyka</button>
+            <button *ngIf="!currentUser" routerLink="/register" class="btn btn-md btn-success">Dodaj do koszyka</button>
             <hr />
             <button (click)="goBack()" class="btn btn-danger">Back</button>
     </div>
