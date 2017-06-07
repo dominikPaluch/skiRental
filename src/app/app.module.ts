@@ -14,7 +14,8 @@ import {SERVICES} from './services';
 import {reducer} from './store/reducers';
 import {CartStore} from './store/cart.store';
 import {DataTableModule} from 'angular-2-data-table';
-import { MyDatePickerModule } from 'mydatepicker';
+import { MyDatePickerModule } from 'my-date-picker';
+
 // regiestration
 import {fakeBackendProvider} from './registration/_helpers/index';
 import {MockBackend} from '@angular/http/testing';

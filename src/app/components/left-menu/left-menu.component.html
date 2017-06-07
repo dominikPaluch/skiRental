@@ -13,8 +13,34 @@
         <li><span class="glyphicon glyphicon-star-empty"></span></li>
       </ul>
     </div>
+    <div *ngIf="currentUser" style="margin-top: 100px; text-align: center;">
+      <p style="color: white; padding: 10px;"><strong>Twoja opinia:</strong></p>
+      <select style="width: 30px;">
+        <option value="5" selected>5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+      </select>
+      <button class="btn-success btn" onclick="$('#infoModal').modal()">Prześlij opinię</button>
+    </div>
     <div class="snow-bg"></div>
     <div class="snow-bg-bottom"></div>
   </div>
 </div>
 
+<div id="infoModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Wystawienie opinii</h4>
+      </div>
+      <div class="modal-body">
+        <p>Dziękujemy za wystawienie opinii o naszej wypożyczalni.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" routerLink="/">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
