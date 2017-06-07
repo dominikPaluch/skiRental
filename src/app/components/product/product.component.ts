@@ -16,7 +16,7 @@ import {UserService} from '../../registration/_services/index';
 
 export class ProductComponent implements OnInit {
   products: Product[];
-  quantity: number;
+  quantity: number[] = [];
   priceLimit = 100;
 
   currentUser: User;
@@ -34,6 +34,10 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductData();
+
+    for(var i=1; i<this.quantity.length; i++){
+      this.quantity[i] = 0;
+    }
   }
 
   clickedProduct(product) {
@@ -42,11 +46,14 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product) {
-    this.cartStore.addToCart(product, this.quantity || 1);
+    this.cartStore.addToCart(product, this.quantity[product.id]);
+    console.log("addToCart() invoked, quantity: "+this.quantity[product.id]);
   }
 
   getProductData() {
-    this.productService.getProducts().then(products => this.products = products);
+    this.productService.getProducts().then(products => {this.products = products;
+                                                        this.products.length = products.length;
+                                                        this.quantity.length = products.length;});
   }
 
   rowColors(product) {

@@ -125,7 +125,7 @@
       <ng-template #dataTableCell let-item="item">
         <div class="input-product" style="display: flex">
           <span class="padding-right-5">Ilość: </span>
-          <input class="input-product" type="number" [(ngModel)]="quantity" min="0">
+          <input class="input-product" type="number" [(ngModel)]="quantity[item.id]" min="0">
         </div>
         <br/>
         <div class="center-button">
