@@ -36,7 +36,7 @@ export class ProductComponent implements OnInit {
     this.getProductData();
 
     for(var i=1; i<this.quantity.length; i++){
-      this.quantity[i] = 0;
+      this.quantity[i] = 1;
     }
   }
 
@@ -46,7 +46,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product) {
-    this.cartStore.addToCart(product, this.quantity[product.id]);
+    this.cartStore.addToCart(product, this.quantity[product.id] || 1);
     console.log("addToCart() invoked, quantity: "+this.quantity[product.id]);
   }
 
