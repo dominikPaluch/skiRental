@@ -3,7 +3,57 @@
 </div>
 <div style="margin: auto; max-width: 1000px;">
   <!--dataPicker-->
-  <sample-date-picker-normal></sample-date-picker-normal>
+  <div class="container">
+    <div class="col-sm-3">
+      <div class="startReservation">
+        <h4>Początek rezerwacji</h4>
+        <sample-date-picker-normal></sample-date-picker-normal>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="stopReservation">
+        <h4>Koniec rezerwacji</h4>
+        <sample-date-picker-normal></sample-date-picker-normal>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <h4>Wybierz sprzęt</h4>
+      <div class="button-group">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Wybierz sprzęt
+          <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>Narty</a>
+          </li>
+          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>Kaski</a>
+          </li>
+          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>Deski</a>
+          </li>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>Kijki</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <h4>Wybierz sprzęt</h4>
+      <div class="button-group">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Wybierz rozmiar
+          <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>XS</a>
+          </li>
+          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>S</a>
+          </li>
+          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>M</a>
+          </li>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>L</a>
+          </li>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>XL</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!--dataPicker-->
   <data-table
     [items]="products"

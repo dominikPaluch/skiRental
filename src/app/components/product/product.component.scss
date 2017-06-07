@@ -21,3 +21,23 @@
   text-align: center;
 }
 
+.container {
+  width: inherit;
+
+  .startReservation {
+    float: left;
+  }
+
+  .stopReservation {
+    float: left;
+  }
+
+  .checkType {
+    float: left;
+  }
+
+  .checkSize {
+    float: left;
+  }
+}
+

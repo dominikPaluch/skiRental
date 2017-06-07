@@ -25,15 +25,6 @@
   }
 </style>
 
-<div class="buttondiv">
-  <button type="button" (click)="onToggleSelector($event)" [disabled]="disabled"
-          [ngStyle]="{'cursor': disabled ? 'not-allowed' : 'pointer'}">Toggle selector
-  </button>
-  <button type="button" (click)="clearDate()" [disabled]="selectedDateNormal===''||disabled"
-          [ngStyle]="{'cursor': disabled ? 'not-allowed' : 'pointer'}">Clear Date
-  </button>
-</div>
-
 <table class="pickertable">
   <tr>
     <td>
@@ -42,11 +33,6 @@
                       (calendarViewChanged)="onCalendarViewChanged($event)" (calendarToggle)="onCalendarToggle($event)"
                       (inputFocusBlur)="onInputFocusBlur($event)"
                       [selDate]="selectedDateNormal" [placeholder]="placeholder" [disabled]="disabled"></my-date-picker>
-    </td>
-    <td>
-      <div class="selectedtext" [ngStyle]="{border: border}">
-        {{selectedTextNormal}}
-      </div>
     </td>
   </tr>
 </table>
