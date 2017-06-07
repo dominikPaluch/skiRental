@@ -1,7 +1,7 @@
-<div>
-  <a routerLink="/">Strona główna</a>
-  > <a routerLink="/reservations">Moje rezerwacje</a>
-  > <a routerLink="/reservations-detail/:1"><strong>Szczegóły rezerwacji</strong></a>
+<div class="navigation">
+  <a routerLink="/">Strona główna</a><span class="glyphicon glyphicon-menu-right"></span>
+  <a routerLink="/cart"><strong>Moje rezerwacje</strong></a><span class="glyphicon glyphicon-menu-right"></span>
+  <a routerLink="/cart"><strong><b style="color: greenyellow">Szczegóły rezerwacji</b></strong></a>
 </div>
 <div *ngIf="selectedReservation">
   <h4>Szczegóły rezerwacji nr: {{selectedReservation.id}}</h4>
@@ -43,7 +43,7 @@
       header="Rozmiar"
       width=10%>
       <ng-template #dataTableHeader let-item="item">
-        <p class="center">Rozmiar</p>
+        <p class="center">Rozmiar (cm)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
         <p class="center">{{item.size}}</p>

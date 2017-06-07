@@ -4,14 +4,14 @@ $bg-left-menu: #4195fc;
   background-color: $bg-left-menu;
   width: 25%;
   float: left;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 35px);
 
   .left-menu {
     background-color: #4180fc;
     position: fixed;
     width: 25%;
     top: 35px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 35px);
 
     .left-menu-list {
       padding-top: 50px;
@@ -67,3 +67,5 @@ $bg-left-menu: #4195fc;
   font-weight: 700;
   margin: 20px;
 }
+
+
