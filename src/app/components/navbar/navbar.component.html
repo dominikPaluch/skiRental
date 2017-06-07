@@ -8,15 +8,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="/">Wypożyczalnia narciarska</a>
+      <a *ngIf="currentUser" style="width: 100%; line-height: 36px; text-align: center;" class="navbar-brand" routerLink="/">Witaj, {{currentUser.firstName}}!</a>
+      <a *ngIf="!currentUser" class="navbar-brand" routerLink="/">Wypożyczalnia narciarska</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div *ngIf="currentUser">
-        <ul class="nav navbar-nav">
-          <li class="nav-item welcome">Witaj, {{currentUser.firstName}}!</li>
-        </ul>
-      </div>
       <ul class="nav navbar-nav navbar-right">
           <li *ngIf="!currentUser">
             <a routerLink="/register"><span>Zarejestruj</span></a>

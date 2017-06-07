@@ -3,6 +3,10 @@
   position: fixed;
   width: 100%;
   z-index: 100;
+
+  .navbar-header {
+    width: 25%;
+  }
 }
 
 .glyphicon {
@@ -53,3 +57,5 @@
     background-color: rgba(43, 230, 0, 0.73);
   }
 }
+
+

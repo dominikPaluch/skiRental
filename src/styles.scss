@@ -54,9 +54,9 @@ ul, ol, li ,p{
   position: fixed;
   width: 100%;
   z-index: 100;
-  margin-left: -15px;
-  margin-top: -25px;
   background-color: #1c61e8;
+  margin-left: -15px;
+  margin-top: -27px;
 
   a {
     color: white;
@@ -81,4 +81,6 @@ ul, ol, li ,p{
 
 .navbar {
   background-color: #1c61e8 !important;
+  border: none !important;
+  // z-index:101 !important;
 }
