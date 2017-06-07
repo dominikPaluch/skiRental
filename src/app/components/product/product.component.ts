@@ -59,4 +59,12 @@ export class ProductComponent implements OnInit {
   rowColors(product) {
     if (product.year >= this.priceLimit) {return 'rgb(255, 255, 197)'; }
   }
+
+  filter() {
+    this.productService.getNarty160180().then(products => this.products = products);
+  }
+
+  showAll() {
+    this.getProductData();
+  }
 }

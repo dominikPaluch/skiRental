@@ -69,3 +69,20 @@ import { Product } from './Product';
         'będzie czystą przyjemnością. Do tego elementy odblaskowe, które zwiększą Twoje bezpieczeństwo także po zmroku,' +
         ' i... możesz szusować, jak tylko długo chcesz!'}
   ]
+
+  export const Narty160180: Product[] = [
+        { id: 1, name: 'Narty', src: '/assets/img/skis/big_a48c82e99ec94d4d967ff56b84e2bb50.jpg', price: 99.99, size: 170,
+          info: 'Jeszcze lepsze narty, czyli jeszcze więcej frajdy z jazdy - tak prezentują się narty Vandal 2.0 marki Majesty. Jest to ulepszony, wszechstronny model, który doskonale się sprawdzi do jazdy po trasie, w parku i backcountry.'},
+        { id: 2, name: 'Narty biegowe', src: '/assets/img/skis/meskie-narty-biegowe.jpg', price: 109.99, size: 180,
+          info: 'Z nartami Thrasher JR - Freestyle Park&Pipe marki Majesty całkowicie zdominujesz snowpark, i to bez względu na to, czy wybierzesz skocznię, czy half-pipe. Model ten wyposażony jest w rdzeń odznaczający się długą żywotnością flex oraz trwały i szybki ślizg IS7200, który idealnie się sprawdzi do jazdy freeride dla młodszych miłośników szusowania .'},
+        { id: 3, name: 'Narty atomic redster', src: '/assets/img/skis/narty-atomic-redster-doubledack-xt.jpg', price: 89.99, size: 180,
+          info: 'Narty RocknRolla marki Majesty to model true twin-tip przeznaczony do street jibbingu i jazd w snowparku. Posiadają konstrukcję 2D hybrid, która łączy w sobie luz wykonywania butterów i ostrość camebra. Oznacza to, że narty wybaczają błędy podczas lądowania, a prawdopodobieństwo złapania krawędzi jest znikome - zamiast tego masz zapewnioną doskonałą kontrolę na najeździe i świetna amortyzację podczas lądowania.'},
+        { id: 5, name: 'Narty local hero', src: '/assets/img/skis/narty-local-hero-jr.jpg', price: 109.99, size: 170,
+          info: 'Narty Wolf marki Majesty to świetny model freetourowy o konstrukcji semi hybrid, która idealnie zachowuje się w puchu i na bardziej wymagającym terenie. Za dobrą przyczepność na oblodzonych stokach i szybką reakcję odpowiada camber, tak więc narty Wolf doskonale się sprawdzą jako wszechstronny model freerideowy.'},
+        { id: 6, name: 'Narty salomon x-race', src: '/assets/img/skis/narty-salomon-x-race-sw.jpg', price: 139.99, size: 160,
+          info: 'Narty Destroyer marki Majesty łączą w sobie wszystkie cechy nowoczesnych nart freerideowych i freetouringowych. To uniwersalne narty, które mają wiele do zaoferowania narciarzom pozatrasowym, niezależnie od ich stylu jazdy.'},
+        { id: 7, name: 'Narty', src: '/assets/img/skis/narty-volkl-nanuq.jpg', price: 109.99, size: 165,
+          info: 'Narty Destroyer Carbon marki Majesty to odpowiedź na potrzebę posiadania jednej pary lekkich i niezwykle wytrzymałych nart, które doskonale się sprawdzą przy zmieniających się warunkach terenowych i śniegowych. Model ten zaprojektowany został w technologii Carbon Lighten Technology, która łączy niską wagę niezbędną podczas dłuższych tur z freerideowymi właściwościami niezbędnymi do jazdy w zróżnicowanym śniegu - zarówno w puchu, jak i na oblodzonych żlebach.'},
+        { id: 8, name: 'Narty biegowe rekreacyjne', src: '/assets/img/skis/nartybiegowe_rekreacyjne.jpg', price: 119.99, size: 175,
+          info: 'Wszechstronne narty Superior marki Majesty to najlepszy wybór do jazdy w backcountry. Zaprojektowane zostały w technologii hybrydowej 2D, która dzięki ostrości camebra zapewnia doskonałą kontrolę na najeździe i świetną amortyzację podczas lądowania.'}
+    ]
