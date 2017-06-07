@@ -1,40 +1,53 @@
 <div class="navigation">
   <a routerLink="/">Strona główna</a><span class="glyphicon glyphicon-menu-right"></span>
-  <a routerLink="/cart"><strong><b style="color: greenyellow">Koszyk</b></strong></a><span class="glyphicon glyphicon-menu-right"></span>
+  <a routerLink="/cart"><strong><b style="color: greenyellow">Koszyk</b></strong></a><span
+  class="glyphicon glyphicon-menu-right"></span>
   <a routerLink="/order">Szczegóły zamówienia</a><span class="glyphicon glyphicon-menu-right"></span>
   <a routerLink="/delivery">Dane dostawy</a><span class="glyphicon glyphicon-menu-right"></span>
   <a routerLink="/summary">Podsumowanie zamówienia</a>
 </div>
 <div *ngIf="cart.length <= 0">
-    <h3 class="text-center red">Brak sprzętu w koszyku!</h3>
+  <h3 class="text-center red">Brak sprzętu w koszyku!</h3>
 </div>
-<table class="table table-striped table-hover ">
+<div *ngIf="cart.length > 0">
+  <table class="table table-striped table-hover col-md-12 ">
     <thead>
-        <tr>
-        <th>Ilość</th>
-        <th>Nazwa</th>
-        <th>Cena (zł)</th>
-        <th>Zdjęcie</th>
-        </tr>
+    <tr>
+      <th>Zdjęcie</th>
+      <th>Ilość</th>
+      <th>Nazwa</th>
+      <th>Cena (zł)</th>
+      <th>Akcje</th>
+    </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let product of cart; let i = index">
-        <td><img src={{product.src}} width="100" height="100" /></td>
-        <td><h4>{{product.quantity}}</h4></td>
-        <td><h4>{{product.name}}</h4></td>
-        <td><h4>{{product.price}}</h4></td>
-        <td><button (click)="removeProduct(product)" class="btn btn-xs btn-danger">Usun</button></td>
-      </tr>
-
-      <tr class="warning">
-        <td><h4>Razem: {{totalQuantity}}</h4></td>
-        <td></td>
-        <td><h4>Razem: {{totalPrice}} zł</h4></td>
-        <td></td>
-        <td><button routerLink="/order" *ngIf="cart.length > 0" class="btn btn-success">Zamów</button></td>
-        <td><button routerLink="/products" *ngIf="cart.length > 0" class="btn btn-danger">Kontynuuj zakupy</button></td>
-        <td><button *ngIf="cart.length <= 0" class="btn btn-success" disabled>Zamów</button></td>
-      </tr>
+    <tr *ngFor="let product of cart; let i = index">
+      <td><img src={{product.src}} width="100" height="100"/></td>
+      <td><h4>{{product.quantity}}</h4></td>
+      <td><h4>{{product.name}}</h4></td>
+      <td><h4>{{product.price}}</h4></td>
+      <td>
+        <button (click)="removeProduct(product)" class="btn btn-xs btn-danger">Usun</button>
+      </td>
+    </tr>
+    <br/>
+    <br/>
+    <tr class="warning">
+      <td><h4>Razem: {{totalQuantity}}</h4></td>
+      <td></td>
+      <td><h4>Razem: {{totalPrice}} zł</h4></td>
+      <td></td>
+      <td>
+        <button routerLink="/products" *ngIf="cart.length > 0" class="btn btn-danger">Kontynuuj zakupy</button>
+      </td>
+      <td>
+        <button routerLink="/order" *ngIf="cart.length > 0" class="btn btn-success">Zamów</button>
+      </td>
+      <td>
+        <button *ngIf="cart.length <= 0" class="btn btn-success" disabled>Zamów</button>
+      </td>
+    </tr>
     </tbody>
-</table>
+  </table>
+</div>

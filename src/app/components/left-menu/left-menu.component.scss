@@ -1,4 +1,4 @@
-$bg-left-menu: #4195fc;
+$bg-left-menu: #1c61e8;;
 
 .left-menu-bg {
   background-color: $bg-left-menu;
@@ -10,7 +10,7 @@ $bg-left-menu: #4195fc;
     background-color: #4180fc;
     position: fixed;
     width: 25%;
-    top: 35px;
+    top: 60px;
     height: calc(100vh - 35px);
 
     .left-menu-list {
