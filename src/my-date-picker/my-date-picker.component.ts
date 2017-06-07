@@ -66,7 +66,7 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor {
     invalidDate: boolean = false;
     disableTodayBtn: boolean = false;
     dayIdx: number = 0;
-    weekDayOpts: Array<string> = ["su", "mo", "tu", "we", "th", "fr", "sa"];
+    weekDayOpts: Array<string> = ["nie", "pon", "wt", "śr", "czw", "pt", "sb"];
 
     selectMonth: boolean = false;
     selectYear: boolean = false;

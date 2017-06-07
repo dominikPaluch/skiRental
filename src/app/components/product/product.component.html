@@ -1,7 +1,7 @@
-<div>
+<div class="navigation">
   <a routerLink="/"><strong>Strona główna</strong></a>
 </div>
-<div style="margin: auto; max-width: 1000px;">
+<div style="margin: auto; max-width: 1000px; margin-top: 120px;">
   <!--dataPicker-->
   <div class="container">
     <div class="col-sm-3">
@@ -16,10 +16,10 @@
         <sample-date-picker-normal></sample-date-picker-normal>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <h4>Wybierz sprzęt</h4>
       <div class="button-group">
-        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Wybierz sprzęt
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Sprzęt
           <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>Narty</a>
@@ -33,23 +33,26 @@
         </ul>
       </div>
     </div>
-    <div class="col-sm-3">
-      <h4>Wybierz sprzęt</h4>
+    <div class="col-sm-2">
+      <h4>Wybierz rozmiar</h4>
       <div class="button-group">
-        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Wybierz rozmiar
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Rozmiar
           <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>XS</a>
+          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/><div class="size">120cm - 140cm</div></a>
           </li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>S</a>
+          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/><div class="size">140cm - 160cm</div></a>
           </li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>M</a>
+          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/><div class="size">160cm - 180cm</div></a>
           </li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>L</a>
-          </li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>XL</a>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/><div class="size">180cm - 200cm</div></a>
           </li>
         </ul>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="show">
+        <button type="button" class="btn btn-success">Wyświetl</button>
       </div>
     </div>
   </div>
