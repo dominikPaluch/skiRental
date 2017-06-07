@@ -5,10 +5,17 @@
 </div>
 <div *ngIf="selectedReservation">
   <h4>Szczegóły rezerwacji nr: {{selectedReservation.id}}</h4>
-  <strong>Termin:</strong><br/>
-  <strong>Od:</strong> {{selectedReservation.startDate}} <br/>
-  <strong>Do:</strong> {{selectedReservation.endDate}} <br/><br/>
-  <strong>Cena:</strong> {{selectedReservation.price}} zł<br/>
+  <br/>
+  <br/>
+  <div class="col-md-1"><strong>Od:</strong></div>
+  <div class="col-md-6">{{selectedReservation.startDate}}</div>
+  <br/>
+  <div class="col-md-1"><strong>Do:</strong></div>
+  <div class="col-md-6">{{selectedReservation.endDate}}</div>
+  <br/>
+  <div class="col-md-1"><strong>Cena:</strong></div>
+  <div class="col-md-6">{{selectedReservation.price}} zł</div>
+  <br/>
   <br/>
   <strong>Zarezerwowane produkty:</strong>
   <data-table

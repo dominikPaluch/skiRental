@@ -33,6 +33,7 @@
         <td><h4>Razem: {{totalPrice}} zł</h4></td>
         <td></td>
         <td><button routerLink="/order" *ngIf="cart.length > 0" class="btn btn-success">Zamów</button></td>
+        <td><button routerLink="/products" *ngIf="cart.length > 0" class="btn btn-danger">Kontynuuj zakupy</button></td>
         <td><button *ngIf="cart.length <= 0" class="btn btn-success" disabled>Zamów</button></td>
       </tr>
     </tbody>
