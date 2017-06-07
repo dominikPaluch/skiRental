@@ -14,8 +14,8 @@
     <thead>
     <tr>
       <th>Zdjęcie</th>
-      <th>Ilość</th>
       <th>Nazwa</th>
+      <th>Ilość</th>
       <th>Cena (zł)</th>
       <th>Akcje</th>
     </tr>
@@ -24,8 +24,8 @@
     <tbody>
     <tr *ngFor="let product of cart; let i = index">
       <td><img src={{product.src}} width="100" height="100"/></td>
-      <td><h4>{{product.quantity}}</h4></td>
       <td><h4>{{product.name}}</h4></td>
+      <td><h4>{{product.quantity}}</h4></td>
       <td><h4>{{product.price}}</h4></td>
       <td>
         <button (click)="removeProduct(product)" class="btn btn-xs btn-danger">Usun</button>
@@ -34,10 +34,10 @@
     <br/>
     <br/>
     <tr class="warning">
+      <td></td>
+      <td></td>
       <td><h4>Razem: {{totalQuantity}}</h4></td>
-      <td></td>
       <td><h4>Razem: {{totalPrice}} zł</h4></td>
-      <td></td>
       <td>
         <button routerLink="/products" *ngIf="cart.length > 0" class="btn btn-danger">Kontynuuj zakupy</button>
       </td>
