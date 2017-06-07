@@ -5,6 +5,7 @@ body {
   padding: 0;
   font-family: 'Open Sans', sans-serif !important;
   background-color: #ecfaff;
+  overflow: scroll;
 }
 
 * {
@@ -56,19 +57,20 @@ ul, ol, li ,p{
   background-color: #1c61e8;
   margin-left: -15px;
   margin-top: -30px;
-  width: 40%;
+  width: 100%;
+  padding-left: 30px;
 
   span {
     color: white;
-    font-size: 6px;
-    padding: 0 10px;
+    font-size: 10px;
+    padding: 0 10px ;
   }
 
   a {
     color: white;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding-left: 5px;
-    font-size: 10px;
+    font-size: 12px;
+    padding:  5px;
 
     strong {
       font-weight: 300;
