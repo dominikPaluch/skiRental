@@ -31,7 +31,7 @@
             <a routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
           </li>
           <li>
-            <div *ngIf="totalPrice">
+            <div *ngIf="totalPrice && currentUser">
               <div class="thumbnail price">
                 <strong>Ilość w koszyku: </strong><span class="badge">{{ totalQuantity }}</span> <strong>Łączna cena: {{
                 totalPrice }} zł</strong>
