@@ -2,12 +2,9 @@
   <a routerLink="/"><strong>Strona główna</strong></a>
 </div>
 <div style="margin: auto; max-width: 1000px;">
-  <div>
-    <span>Cena powyzej: </span>
-    <input type="number" [(ngModel)]="priceLimit" min="0" class="form-control input-sm"
-           style="display: inline-block; width: 50px">
-    <span> zł</span>
-  </div>
+  <!--dataPicker-->
+  <sample-date-picker-normal></sample-date-picker-normal>
+  <!--dataPicker-->
   <data-table
     [items]="products"
     [itemCount]="quantity"
@@ -86,4 +83,12 @@
       </ng-template>
     </data-table-column>
   </data-table>
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker1').datetimepicker({
+        language: 'ru',
+        useCurrent: false
+      });
+    });
+  </script>
 </div>
