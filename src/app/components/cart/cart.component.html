@@ -31,13 +31,11 @@
         <button (click)="removeProduct(product)" class="btn btn-xs btn-danger">Usun</button>
       </td>
     </tr>
-    <br/>
-    <br/>
     <tr class="warning">
+      <td><h4><strong>Razem:</strong></h4></td>
       <td></td>
-      <td></td>
-      <td><h4>Razem: {{totalQuantity}}</h4></td>
-      <td><h4>Razem: {{totalPrice}} zł</h4></td>
+      <td><h4><strong>{{totalQuantity}} szt.</strong></h4></td>
+      <td><h4><strong>{{totalPrice}} zł</strong></h4></td>
       <td>
         <button routerLink="/products" *ngIf="cart.length > 0" class="btn btn-primary">Kontynuuj zakupy</button>
       </td>
