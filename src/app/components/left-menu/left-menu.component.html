@@ -5,6 +5,7 @@
       <li class="item"><a routerLink="/reservations" routerLinkActive="active" *ngIf="currentUser">Moje rezerwacje</a></li>
     </ul>
     <div class="opinion">
+      <p style="color: white; padding: 10px; text-align: center;">Ocena o wypożyczalni:</p>
       <ul class="star-list">
         <li><span class="glyphicon glyphicon-star"></span></li>
         <li><span class="glyphicon glyphicon-star"></span></li>
@@ -15,7 +16,7 @@
     </div>
     <div  *ngIf="currentUser" style="margin-top: 100px; text-align: center; padding: 20px 0;
   text-align: center; background-color: #4195fc;">
-      <p style="color: white; padding: 10px;">Twoja opinia:</p>
+      <p style="color: white; padding: 10px;">Twoja ocena:</p>
       <select class="sel" style="width: 30px;">
         <option value="5" selected>5</option>
         <option value="4">4</option>
@@ -23,7 +24,7 @@
         <option value="2">2</option>
         <option value="1">1</option>
       </select>
-      <button class="btn-success btn" onclick="$('#infoModal').modal()">Prześlij opinię</button>
+      <button class="btn-success btn" onclick="$('#infoModal').modal()">Prześlij ocenę</button>
     </div>
     <div class="snow-bg"></div>
     <div class="snow-bg-bottom"></div>
@@ -34,10 +35,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Wystawienie opinii</h4>
+        <h4 class="modal-title">Wystawienie oceny</h4>
       </div>
       <div class="modal-body">
-        <p>Dziękujemy za wystawienie opinii o naszej wypożyczalni.</p>
+        <p>Dziękujemy za wystawienie oceny o naszej wypożyczalni.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" routerLink="/">OK</button>
