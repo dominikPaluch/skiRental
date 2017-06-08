@@ -86,7 +86,9 @@
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Nazwa</p>
         <ng-template #dataTableCell let-item="item">
-          <p class="center">{{item.name}}</p>
+          <a class="centerA" (click)="clickedProduct(item)">
+            <p class="center" (click)="clickedProduct(item)">{{item.name}}</p>
+          </a>
         </ng-template>
       </ng-template>
     </data-table-column>
@@ -101,7 +103,9 @@
         <p class="center">Rozmiar (cm)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <p class="center">{{item.size}}</p>
+        <a class="centerA" (click)="clickedProduct(item)">
+          <p class="center" (click)="clickedProduct(item)">{{item.size}}</p>
+        </a>
       </ng-template>
     </data-table-column>
     <data-table-column
@@ -114,7 +118,9 @@
         <p class="center">Cena (zł)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <p class="center">{{item.price}}</p>
+        <a class="centerA" (click)="clickedProduct(item)">
+          <p class="center" (click)="clickedProduct(item)">{{item.price}}</p>
+        </a>
       </ng-template>
     </data-table-column>
     <data-table-column
