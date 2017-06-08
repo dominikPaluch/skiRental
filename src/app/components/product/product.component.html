@@ -133,12 +133,8 @@
         <div class="input-product" style="display: flex">
           <span class="padding-right-5">Ilość: </span>
           <input class="input-product" type="number" [(ngModel)]="quantity[item.id]" min="0">
-        </div>
-        <br/>
-        <div class="center-button">
           <button (click)="addToCart(item)" class="btn btn-sm btn-success" *ngIf="currentUser">Dodaj</button>
           <a routerLink="/register" class="btn btn-sm btn-primary" *ngIf="!currentUser">Dodaj</a>
-          <button (click)="clickedProduct(item)" class="btn btn-sm btn-primary">Szczegóły</button>
         </div>
       </ng-template>
     </data-table-column>
