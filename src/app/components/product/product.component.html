@@ -4,6 +4,7 @@
 <div style="margin: auto; max-width: 1000px; margin-top: 120px;">
   <!--datePicker-->
   <div class="container">
+    <h3 style="text-align: left;">Zarezerwuj sprzęt</h3>
     <div class="col-sm-3">
       <div class="startReservation">
         <h5>Początek rezerwacji</h5>
@@ -16,27 +17,39 @@
         <sample-date-picker-normal></sample-date-picker-normal>
       </div>
     </div>
-    <div class="col-sm-2" id="types">
+    <div class="col-sm-2">
       <h5>Wybierz sprzęt</h5>
-      <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>Narty</a>
-      </li>
-      <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>Kaski</a>
-      </li>
-      <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>Deski</a>
-      </li>
-      <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>Kijki</a>
-      </li>
+      <div class="button-group">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Sprzęt
+          <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" (click)="chooseType('Narty')"/>Narty</a>
+          </li>
+          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox" (click)="chooseType('Kaski')"/>Kaski</a>
+          </li>
+          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox" (click)="chooseType('Gogle')"/>Gogle</a>
+          </li>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox" (click)="chooseType('Kijki')"/>Kijki</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="col-sm-2" id="sizes">
+    <div class="col-sm-2">
       <h5>Wybierz rozmiar</h5>
-      <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>120cm - 140cm</a>
-      </li>
-      <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>140cm - 160cm</a>
-      </li>
-      <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>160cm - 180cm</a>
-      </li>
-      <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>180cm - 200cm</a>
-      </li>
+      <div class="button-group">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Rozmiar
+          <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" (click)="chooseSize('121cm - 140cm')"/><div class="size">121cm - 140cm</div></a>
+          </li>
+          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox" (click)="chooseSize('141cm - 160cm')"/><div class="size">141cm - 160cm</div></a>
+          </li>
+          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox" (click)="chooseSize('161cm - 180cm')"/><div class="size">161cm - 180cm</div></a>
+          </li>
+          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox" (click)="chooseSize('181cm - 200cm')"/><div class="size">181cm - 200cm</div></a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="col-sm-2">
       <div class="show">
@@ -45,6 +58,10 @@
       </div>
     </div>
   </div>
+  <br/>
+  <strong *ngIf="chosenTypes.length>0">Wybrane sprzęty:</strong> {{displayChosenTypes()}}
+  <br/>
+  <strong *ngIf="chosenSizes.length>0">Wybrane rozmiary:</strong> {{displayChosenSizes()}}
   <data-table
     [items]="products"
     [itemCount]="quantity"

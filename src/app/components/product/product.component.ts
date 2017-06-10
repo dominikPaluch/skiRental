@@ -18,6 +18,8 @@ export class ProductComponent implements OnInit {
   products: Product[];
   quantity: number[] = [];
   priceLimit = 100;
+  chosenTypes: string[] = [];
+  chosenSizes: string[] = [];
 
   currentUser: User;
   users: User[] = [];
@@ -35,7 +37,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.getProductData();
 
-    for(var i=1; i<this.quantity.length; i++){
+    for(var i=0; i<this.quantity.length; i++){
       this.quantity[i] = 1;
     }
   }
@@ -70,5 +72,43 @@ export class ProductComponent implements OnInit {
   showAll() {
     this.isFiler = false;
     this.getProductData();
+  }
+
+  chooseType(type) {
+      var i;
+      for(i=0; i<this.chosenTypes.length; i++){
+        if(this.chosenTypes[i] == type){
+          this.chosenTypes.splice(i, 1);
+          return;
+        }
+      }
+      this.chosenTypes[i] = type;
+  }
+
+  displayChosenTypes() {
+      var str = '';
+      for(var i=0; i<this.chosenTypes.length; i++){
+        str += this.chosenTypes[i] + ', ';
+      }
+      return str;
+  }
+
+  chooseSize(size) {
+      var i;
+      for(i=0; i<this.chosenSizes.length; i++){
+        if(this.chosenSizes[i] == size){
+          this.chosenSizes.splice(i, 1);
+          return;
+        }
+      }
+      this.chosenSizes[i] = size;
+  }
+
+  displayChosenSizes() {
+      var str = '';
+      for(var i=0; i<this.chosenSizes.length; i++){
+        str += this.chosenSizes[i] + ', ';
+      }
+      return str;
   }
 }
