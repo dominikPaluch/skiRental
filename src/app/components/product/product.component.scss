@@ -10,7 +10,7 @@
 
 .input-product {
   width: 40px;
-  margin: 0 25%;
+  margin: 0 15%;
 }
 
 .center-button{
@@ -71,5 +71,13 @@
       padding:5px;
     }
   }
+}
+
+#more {
+  color: blue;
+}
+
+#more:hover {
+  color: #8888dd;
 }
 

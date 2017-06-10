@@ -70,7 +70,7 @@
     <data-table-column
       property="product.name"
       header="Zdjęcie"
-      width="120px">
+      width="12%">
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Zdjęcie</p>
       </ng-template>
@@ -82,7 +82,7 @@
     <data-table-column
       property="name"
       header="Nazwa"
-      width=30%>
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Nazwa</p>
         <ng-template #dataTableCell let-item="item">
@@ -95,7 +95,7 @@
     <data-table-column
       property="size"
       header="Rozmiar"
-      width=15%>
+      width=10%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Rozmiar (cm)</p>
       </ng-template>
@@ -109,10 +109,26 @@
       </ng-template>
     </data-table-column>
     <data-table-column
+      property="info"
+      header="Opis"
+      width=25%>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Opis</p>
+      </ng-template>
+      <ng-template #dataTableHeader let-item="item">
+        <p class="center">Opis</p>
+      </ng-template>
+      <ng-template #dataTableCell let-item="item">
+        <a class="centerA" (click)="clickedProduct(item)">
+          <p class="center" (click)="clickedProduct(item)">{{item.info.substring(0,50)}}... <i id="more">Więcej</i></p>
+        </a>
+      </ng-template>
+    </data-table-column>
+    <data-table-column
       id="a"
       property="price"
       header="Cena (zł)"
-      width=15%>
+      width=10%>
       Rozmiar (cm)
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Cena (zł)</p>
@@ -125,7 +141,7 @@
     </data-table-column>
     <data-table-column
       header="Dodaj do koszyka"
-      width="25%">
+      width="28%">
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Dodaj do koszyka</p>
       </ng-template>
