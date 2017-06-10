@@ -2,7 +2,7 @@
   <a routerLink="/"><strong>Strona główna</strong></a>
 </div>
 <div style="margin: auto; max-width: 1000px; margin-top: 120px;">
-  <!--dataPicker-->
+  <!--datePicker-->
   <div class="container">
     <div class="col-sm-3">
       <div class="startReservation">
@@ -18,47 +18,33 @@
     </div>
     <div class="col-sm-2" id="types">
       <h5>Wybierz sprzęt</h5>
-      <!--<div class="button-group">-->
-        <!--<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Sprzęt-->
-          <!--<span class="caret"></span></button>-->
-        <!--<ul class="dropdown-menu">-->
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>Narty</a>
-          </li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>Kaski</a>
-          </li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>Deski</a>
-          </li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>Kijki</a>
-          </li>
-        <!--</ul>-->
-      <!--</div>-->
+      <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>Narty</a>
+      </li>
+      <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>Kaski</a>
+      </li>
+      <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>Deski</a>
+      </li>
+      <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>Kijki</a>
+      </li>
     </div>
     <div class="col-sm-2" id="sizes">
       <h5>Wybierz rozmiar</h5>
-      <!--<div class="button-group">-->
-        <!--<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Rozmiar-->
-          <!--<span class="caret"></span></button>-->
-        <!--<ul class="dropdown-menu">-->
-          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>120cm - 140cm</a>
-          </li>
-          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>140cm - 160cm</a>
-          </li>
-          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>160cm - 180cm</a>
-          </li>
-          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>180cm - 200cm</a>
-          </li>
-        <!--</ul>-->
-      <!--</div>-->
+      <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>120cm - 140cm</a>
+      </li>
+      <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>140cm - 160cm</a>
+      </li>
+      <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>160cm - 180cm</a>
+      </li>
+      <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>180cm - 200cm</a>
+      </li>
     </div>
     <div class="col-sm-2">
       <div class="show">
         <button *ngIf="!isFiler" type="button" class="btn btn-success" (click)="filter()">Zatwierdź</button>
-        <button *ngIf="isFiler" type="button" class="btn btn-success" (click)="showAll()">Wyczyść</button>
+        <button *ngIf="isFiler" type="button" class="btn btn-danger" (click)="showAll()">Wyczyść</button>
       </div>
     </div>
   </div>
-
-  <!--dataPicker-->
   <data-table
     [items]="products"
     [itemCount]="quantity"
