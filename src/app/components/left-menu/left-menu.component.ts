@@ -10,10 +10,12 @@ import {Router} from "@angular/router";
 export class LeftMenuComponent implements OnInit {
 
     currentUser: User;
+    currentUrl: string;
 
     constructor(private router: Router) {
       router.events.subscribe(() => {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.currentUrl = router.url;
       });
     }
 

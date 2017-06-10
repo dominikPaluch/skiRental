@@ -1,8 +1,10 @@
 <div class="left-menu-bg">
   <div class="left-menu">
     <ul class="left-menu-list">
-      <li class="item"><a routerLink="/" routerLinkActive="active">Zarezerwuj sprzęt</a></li>
-      <li class="item"><a routerLink="/reservations" routerLinkActive="active" *ngIf="currentUser">Moje rezerwacje</a></li>
+      <li class="item"><a routerLink="/" routerLinkActive="active" *ngIf="currentUrl!='/'">Zarezerwuj sprzęt</a></li>
+      <li class="item"><a routerLink="/" routerLinkActive="active" *ngIf="currentUrl=='/'" style="background-color: #C0D9D9; color: blue;">Zarezerwuj sprzęt</a></li>
+      <li class="item"><a routerLink="/reservations" routerLinkActive="active" *ngIf="currentUser && currentUrl!='/reservations'">Moje rezerwacje</a></li>
+      <li class="item"><a routerLink="/reservations" routerLinkActive="active" *ngIf="currentUser && currentUrl=='/reservations'" style="background-color: #C0D9D9; color: blue;">Moje rezerwacje</a></li>
     </ul>
     <div class="opinion">
       <p style="color: white; padding: 10px; text-align: center;">Ocena o wypożyczalni:</p>
