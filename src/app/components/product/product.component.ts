@@ -72,6 +72,18 @@ export class ProductComponent implements OnInit {
   showAll() {
     this.isFiler = false;
     this.getProductData();
+    this.chosenTypes = [];
+    this.chosenSizes = [];
+    this.uncheckAll();
+  }
+
+  uncheckAll() {
+      var w = document.getElementsByTagName('input');
+      for(var i = 0; i < w.length; i++){
+        if(w[i].type=='checkbox'){
+          w[i].checked = false;
+          };
+      };
   }
 
   chooseType(type) {
