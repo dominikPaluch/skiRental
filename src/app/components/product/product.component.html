@@ -150,7 +150,7 @@
       </ng-template>
       <ng-template #dataTableCell let-item="item">
         <div class="input-product" style="display: flex">
-          <span class="padding-right-5">Ilość: </span>
+          <p class="padding-right-5" style="margin-top: 5px;">Ilość: </p>
           <input class="input-product" type="number" [(ngModel)]="quantity[item.id]" min="0">
           <button (click)="addToCart(item)" class="btn btn-sm btn-success" *ngIf="currentUser">Dodaj</button>
           <a routerLink="/register" class="btn btn-sm btn-primary" *ngIf="!currentUser">Dodaj</a>
