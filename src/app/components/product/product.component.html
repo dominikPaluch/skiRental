@@ -78,8 +78,7 @@
         <p class="center">Zdjęcie</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <img (click)="clickedProduct(item)" width="120" height="120"
-             src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
+        <img width="120" height="120" src={{item.src}} class="img-responsive image" alt="Błąd ładowania zdjęcia"/>
       </ng-template>
     </data-table-column>
     <data-table-column
@@ -89,8 +88,8 @@
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Nazwa</p>
         <ng-template #dataTableCell let-item="item">
-          <a class="centerA" (click)="clickedProduct(item)">
-            <p class="center" (click)="clickedProduct(item)">{{item.name}}</p>
+          <a class="centerA">
+            <p class="center">{{item.name}}</p>
           </a>
         </ng-template>
       </ng-template>
@@ -106,15 +105,15 @@
         <p class="center">Rozmiar (cm)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <a class="centerA" (click)="clickedProduct(item)">
-          <p class="center" (click)="clickedProduct(item)">{{item.size}}</p>
+        <a class="centerA">
+          <p class="center">{{item.size}}</p>
         </a>
       </ng-template>
     </data-table-column>
     <data-table-column
       property="info"
       header="Opis"
-      width=25%>
+      width=30%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Opis</p>
       </ng-template>
@@ -122,9 +121,8 @@
         <p class="center">Opis</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <a class="centerA" (click)="clickedProduct(item)">
-          <p class="center" (click)="clickedProduct(item)">{{item.info.substring(0,50)}}... <i id="more">Więcej</i></p>
-        </a>
+        <p class="center" *ngIf="mouseOver!=item.id" (mouseenter)="setMouseOver(item.id)">{{item.info.substring(0,50)}}...<br/><i id="more">Najedź kursorem, by zobaczyć więcej</i></p>
+        <p class="center" *ngIf="mouseOver==item.id" (mouseleave)="setMouseOver(0)">{{item.info}}</p>
       </ng-template>
     </data-table-column>
     <data-table-column
@@ -137,14 +135,14 @@
         <p class="center">Cena (zł)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <a class="centerA" (click)="clickedProduct(item)">
-          <p class="center" (click)="clickedProduct(item)"><strong>{{item.price}}</strong></p>
+        <a class="centerA">
+          <p class="center"><strong>{{item.price}}</strong></p>
         </a>
       </ng-template>
     </data-table-column>
     <data-table-column
       header="Dodaj do koszyka"
-      width="28%">
+      width="23%">
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Dodaj do koszyka</p>
       </ng-template>

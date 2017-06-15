@@ -20,6 +20,7 @@ export class ProductComponent implements OnInit {
   priceLimit = 100;
   chosenTypes: string[] = [];
   chosenSizes: string[] = [];
+  mouseOver: number = 0;
 
   currentUser: User;
   users: User[] = [];
@@ -122,5 +123,9 @@ export class ProductComponent implements OnInit {
         str += this.chosenSizes[i] + ', ';
       }
       return str;
+  }
+
+  setMouseOver(b){
+    this.mouseOver = b;
   }
 }
