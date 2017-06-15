@@ -7,8 +7,6 @@
 </div>
 <div class="col-md-12">
   <h4>Podsumowanie zamówienia</h4>
-  <br/>
-  <br/>
   <div class="col-md-1"><strong>Od:</strong></div>
   <div class="col-md-6">{{reservation.startDate}}</div>
   <br/>
@@ -85,8 +83,13 @@
   <br/>
   <br/>
   <br/>
-  <button routerLink="/delivery" class="btn btn-danger">Wróć do danych dostawy</button>
-  <button (click)="confirm()" class="btn btn-success" onclick="$('#sumModal').modal()">Potwierdź zamówienie</button>
+  <div class="col-md-3">
+    <button routerLink="/delivery" class="btn btn-danger">Wróć do danych dostawy</button>
+  </div>
+  <div class="col-md-6"></div>
+  <div class="col-md-3">
+    <button (click)="confirm()" class="btn btn-success" onclick="$('#sumModal').modal()">Potwierdź zamówienie</button>
+  </div>
 </div>
 
 <div id="sumModal" class="modal fade">
@@ -97,7 +100,8 @@
       </div>
       <div class="modal-body">
         <p>Dziękujemy za dokonanie rezerwacji w naszym serwisie.<br/>
-        Oczekuj na wiadomość e-mail ze szczegółami rezerwacji.</p>
+        Oczekuj na wiadomość e-mail ze szczegółami rezerwacji.<br/><br/>
+        <i>Po kliknięciu "OK" zostaniesz przekierowany do listy Twoich rezerwacji.</i></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" routerLink="/reservations">OK</button>
