@@ -1,10 +1,6 @@
 <div class="navigation">
   <a routerLink="/">Strona główna</a><span class="glyphicon glyphicon-menu-right"></span>
-  <a routerLink="/cart"><strong><b style="color: greenyellow">Koszyk</b></strong></a><span
-  class="glyphicon glyphicon-menu-right"></span>
-  <a routerLink="/order">Szczegóły zamówienia</a><span class="glyphicon glyphicon-menu-right"></span>
-  <a routerLink="/delivery">Dane dostawy</a><span class="glyphicon glyphicon-menu-right"></span>
-  <a routerLink="/summary">Podsumowanie zamówienia</a>
+  <a routerLink="/cart"><strong><b style="color: greenyellow">Koszyk</b></strong></a>
 </div>
 <div *ngIf="cart.length <= 0">
   <h3 class="text-center red">Brak sprzętu w koszyku!</h3>
