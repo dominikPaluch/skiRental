@@ -11,3 +11,11 @@
 .center {
   text-align: center;
 }
+
+.container {
+  position: fixed;
+  z-index: 1000;
+  background-color: #ecfaff;;
+  top: 62px;
+  margin: 0 -15px;
+}

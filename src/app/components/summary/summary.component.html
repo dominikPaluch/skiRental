@@ -5,16 +5,26 @@
   <a routerLink="/delivery">Dane dostawy</a><span class="glyphicon glyphicon-menu-right"></span>
   <a routerLink="/summary"><b style="color: greenyellow">Podsumowanie zamówienia</b></a>
 </div>
-<div class="col-md-12">
-  <h4>Podsumowanie zamówienia</h4>
+<div style="margin: auto; max-width: 1000px;">
+  <div class="container">
+    <a routerLink="/order">Szczegóły zamówienia</a><span class="glyphicon glyphicon-menu-right"></span>
+    <a routerLink="/delivery">Dane dostawy</a><span class="glyphicon glyphicon-menu-right"></span>
+    <a routerLink="/summary"><b><u>Podsumowanie zamówienia</u></b></a>
+  </div>
+</div>
+<div class="col-md-12" style="margin-top: 20px;">
+  <h4><b>Podsumowanie zamówienia</b></h4>
   <div class="col-md-1"><strong>Od:</strong></div>
   <div class="col-md-6">{{reservation.startDate}}</div>
   <br/>
   <div class="col-md-1"><strong>Do:</strong></div>
   <div class="col-md-6">{{reservation.endDate}}</div>
   <br/>
+  <div class="col-md-1"><strong>Dni:</strong></div>
+  <div class="col-md-6">3</div>
+  <br/>
   <div class="col-md-1"><strong>Cena:</strong></div>
-  <div class="col-md-6">{{reservation.price}} zł</div>
+  <div class="col-md-6"><b>{{reservation.price}} zł</b></div>
   <br/>
   <br/>
   <strong>Wybrane produkty:</strong>
@@ -37,7 +47,7 @@
     <data-table-column
       property="name"
       header="Nazwa"
-      width=25%>
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Nazwa</p>
       </ng-template>
@@ -48,7 +58,7 @@
     <data-table-column
       property="size"
       header="Rozmiar"
-      width=10%>
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Rozmiar (cm)</p>
       </ng-template>
@@ -59,12 +69,12 @@
     <data-table-column
       property="price"
       header="Cena (zł)"
-      width=10%>
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Cena (zł)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <p class="center">{{item.price}}</p>
+        <p class="center"><b>{{item.price}}</b></p>
       </ng-template>
     </data-table-column>
   </data-table>

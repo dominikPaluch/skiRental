@@ -3,12 +3,19 @@
   <a routerLink="/cart"><strong>Koszyk</strong></a><span class="glyphicon glyphicon-menu-right"></span>
   <a routerLink="/order"><b style="color: greenyellow">Szczegóły zamówienia</b></a>
 </div>
-<div>
-  <h4>Szczegóły zamówienia</h4>
-  <strong>Termin:</strong>
+<div style="max-width: 1000px; position: fixed">
+  <div class="container">
+    <a routerLink="/order"><b><u>Szczegóły zamówienia</u></b></a><span class="glyphicon glyphicon-menu-right"></span>
+    <a routerLink="/delivery">Dane dostawy</a><span class="glyphicon glyphicon-menu-right"></span>
+    <a routerLink="/summary">Podsumowanie zamówienia</a>
+  </div>
+</div>
+<div style="margin-top: 30px;">
+  <h4><b>Szczegóły zamówienia</b></h4>
   <br/><strong>Od:</strong> {{reservation.startDate}}
   <br/><strong>Do:</strong> {{reservation.endDate}}
-  <br/><br/><strong>Cena:</strong>  {{reservation.price}} zł
+  <br/><strong>Dni: </strong>3
+  <br/><strong>Cena: {{reservation.price}} zł</strong>
   <br/><br/>
   <strong>Wybrane produkty:</strong>
   <data-table
@@ -30,7 +37,7 @@
     <data-table-column
       property="name"
       header="Nazwa"
-      width=25%>
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Nazwa</p>
       </ng-template>
@@ -41,7 +48,7 @@
     <data-table-column
       property="size"
       header="Rozmiar"
-      width=10%>
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Rozmiar</p>
       </ng-template>
@@ -52,12 +59,12 @@
     <data-table-column
       property="price"
       header="Cena (zł)"
-      width=10%>
+      width=15%>
       <ng-template #dataTableHeader let-item="item">
         <p class="center">Cena (zł)</p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <p class="center">{{item.price}}</p>
+        <p class="center"><b>{{item.price}}</b></p>
       </ng-template>
     </data-table-column>
   </data-table>

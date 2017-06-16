@@ -4,8 +4,15 @@
   <a routerLink="/order">Szczegóły zamówienia</a><span class="glyphicon glyphicon-menu-right"></span>
   <a routerLink="/delivery"><b style="color: greenyellow">Dane dostawy</b></a>
 </div>
-<div class="col-md-8 col-md-offset-2">
-  <h2>Dane dostawy</h2>
+<div style="max-width: 1000px; position: fixed">
+  <div class="container">
+    <a routerLink="/order">Szczegóły zamówienia</a><span class="glyphicon glyphicon-menu-right"></span>
+    <a routerLink="/delivery"><b><u>Dane dostawy</u></b></a><span class="glyphicon glyphicon-menu-right"></span>
+    <a routerLink="/summary">Podsumowanie zamówienia</a>
+  </div>
+</div>
+<div class="col-md-8 col-md-offset-2" style="margin-top: 20px;">
+  <h4><b>Dane dostawy</b></h4>
   <form name="form" novalidate>
     <div class="form-group">
       <label for="address">Adres <span style="color: red">*</span> (np. Długa 1)</label>
