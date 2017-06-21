@@ -24,6 +24,8 @@ export class ProductComponent implements OnInit {
   chosenSizes: string[] = [];
   mouseOver: number = 0;
   datesChosen: boolean;
+  daysReserved: number = 0;
+  daysReservedInfo: string = '';
 
   currentUser: User;
   users: User[] = [];
@@ -41,7 +43,6 @@ export class ProductComponent implements OnInit {
   checkDates() {
     var startDateChosen = (document.querySelector("#startDP").querySelectorAll("input")[0].value !== '');
     var endDateChosen = (document.querySelector("#endDP").querySelectorAll("input")[0].value !== '');
-    console.log("start: " + startDateChosen + ", end: "+ endDateChosen);
     this.datesChosen = startDateChosen && endDateChosen;
   }
 
@@ -83,6 +84,52 @@ export class ProductComponent implements OnInit {
   filter() {
     this.isFiler = true;
     this.productService.getNarty160180().then(products => this.products = products);
+    this.checkDates();
+    if(this.datesChosen) {
+      var startDateStr = document.querySelector("#startDP").querySelectorAll("input")[0].value;
+      var endDateStr = document.querySelector("#endDP").querySelectorAll("input")[0].value;
+      var start = startDateStr.split(" ");
+      var end = endDateStr.split(" ");
+      var startMc = '';
+      var endMc = '';
+      switch(start[1]){
+        case 'Styczeń': { startMc = '01'; break; }
+        case 'Luty': { startMc = '02'; break; }
+        case 'Marzec': { startMc = '03'; break; }
+        case 'Kwiecień': { startMc = '04'; break; }
+        case 'Maj': { startMc = '05'; break; }
+        case 'Czerwiec': { startMc = '06'; break; }
+        case 'Lipiec': { startMc = '07'; break; }
+        case 'Sierpień': { startMc = '08'; break; }
+        case 'Wrzesień': { startMc = '09'; break; }
+        case 'Październik': { startMc = '10'; break; }
+        case 'Listopad': { startMc = '11'; break; }
+        case 'Grudzień': { startMc = '12'; break; }
+      }
+      switch(end[1]){
+        case 'Styczeń': { endMc = '01'; break; }
+        case 'Luty': { endMc = '02'; break; }
+        case 'Marzec': { endMc = '03'; break; }
+        case 'Kwiecień': { endMc = '04'; break; }
+        case 'Maj': { endMc = '05'; break; }
+        case 'Czerwiec': { endMc = '06'; break; }
+        case 'Lipiec': { endMc = '07'; break; }
+        case 'Sierpień': { endMc = '08'; break; }
+        case 'Wrzesień': { endMc = '09'; break; }
+        case 'Październik': { endMc = '10'; break; }
+        case 'Listopad': { endMc = '11'; break; }
+        case 'Grudzień': { endMc = '12'; break; }
+      }
+      var startDate = new Date(start[2] + "-" + startMc + "-" + start[0]);
+      var endDate = new Date(end[2] + "-" + endMc + "-" + end[0]);
+      var msInDay = 1000 * 3600 * 24;
+      this.daysReserved = (endDate.getTime() / msInDay) - (startDate.getTime() / msInDay) + 1;
+      if(this.daysReserved == 1) {
+        this.daysReservedInfo = "Rezerwujesz sprzęt na " + this.daysReserved + " dzień";
+      } else {
+        this.daysReservedInfo = "Rezerwujesz sprzęt na " + this.daysReserved + " dni";
+      }
+    }
   }
 
   showAll() {
@@ -91,6 +138,7 @@ export class ProductComponent implements OnInit {
     this.chosenTypes = [];
     this.chosenSizes = [];
     this.uncheckAll();
+    this.daysReservedInfo = '';
   }
 
   uncheckAll() {
