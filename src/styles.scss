@@ -94,3 +94,13 @@ ul, ol, li ,p{
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(48, 214, 10, 0.73);
+  box-shadow: inset 0 -1px 0 rgba(48, 214, 10, 0.73);
+  font-size: 16px;
+}

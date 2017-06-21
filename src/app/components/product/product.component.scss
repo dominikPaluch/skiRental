@@ -1,7 +1,8 @@
 .image:hover {
-  -webkit-transform:scale(1.2);
-  transform:scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
+
 .image {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
@@ -13,13 +14,14 @@
   margin: 0 15%;
 }
 
-.center-button{
+.center-button {
   margin: 0 10%;
 }
 
 .center {
   text-align: center;
 }
+
 .centerA {
   padding: 100%;
   color: black;
@@ -30,7 +32,7 @@
   text-align: center;
   z-index: 1000;
   background-color: #ecfaff;;
-  top: 62px;
+  top: 60px;
   width: 75%;
   margin: 0 -15px;
 
@@ -39,10 +41,10 @@
     width: 60%;
 
     li {
-        .size {
-          float: right;
-          margin-top: 5px;
-        }
+      .size {
+        float: right;
+        margin-top: 5px;
+      }
     }
   }
 
@@ -66,8 +68,9 @@
     float: left;
     margin-top: 35px;
 
+
     button {
-      padding:5px;
+      padding: 5px;
     }
   }
 }
