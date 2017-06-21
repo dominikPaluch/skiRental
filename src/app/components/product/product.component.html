@@ -113,16 +113,17 @@
     <data-table-column
       property="info"
       header="Opis"
-      width=30%>
+      width=30%
+      white-space="pre-wrap">
       <ng-template #dataTableHeader let-item="item">
-        <p class="center">Opis</p>
+        <p class="center" >Parametry techniczne</p>
       </ng-template>
       <ng-template #dataTableHeader let-item="item">
-        <p class="center">Opis</p>
+        <p class="center">Parametry techniczne </p>
       </ng-template>
       <ng-template #dataTableCell let-item="item">
-        <p class="center" *ngIf="mouseOver!=item.id" (mouseenter)="setMouseOver(item.id)">{{item.info.substring(0,50)}}...<br/><i id="more">Najedź kursorem, by zobaczyć więcej</i></p>
-        <p class="center" *ngIf="mouseOver==item.id" (mouseleave)="setMouseOver(0)">{{item.info}}</p>
+        <p class="center" style="white-space: pre-wrap;" *ngIf="mouseOver!=item.id" (mouseenter)="setMouseOver(item.id)">{{item.info.substring(0,50)}}...<br/><i id="more">Najedź kursorem, by zobaczyć więcej</i></p>
+        <p class="center" style="white-space: pre-wrap;" *ngIf="mouseOver==item.id" (mouseleave)="setMouseOver(0)">{{item.info}}</p>
       </ng-template>
     </data-table-column>
     <data-table-column
