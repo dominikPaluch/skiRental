@@ -8,6 +8,8 @@ import {CartStore} from '../../store/cart.store';
 import {User} from '../../registration/_models/index';
 import {UserService} from '../../registration/_services/index';
 
+declare var $: any;
+
 @Component({
   selector: 'product',
   templateUrl: './product.component.html',
@@ -21,6 +23,7 @@ export class ProductComponent implements OnInit {
   chosenTypes: string[] = [];
   chosenSizes: string[] = [];
   mouseOver: number = 0;
+  datesChosen: boolean;
 
   currentUser: User;
   users: User[] = [];
@@ -33,6 +36,13 @@ export class ProductComponent implements OnInit {
       router.events.subscribe(() => {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
       });
+  }
+
+  checkDates() {
+    var startDateChosen = (document.querySelector("#startDP").querySelectorAll("input")[0].value !== '');
+    var endDateChosen = (document.querySelector("#endDP").querySelectorAll("input")[0].value !== '');
+    console.log("start: " + startDateChosen + ", end: "+ endDateChosen);
+    this.datesChosen = startDateChosen && endDateChosen;
   }
 
   ngOnInit(): void {
@@ -49,8 +59,13 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product) {
-    this.cartStore.addToCart(product, this.quantity[product.id] || 1);
-    console.log("addToCart() invoked, quantity: "+this.quantity[product.id]);
+    this.checkDates();
+    if(this.datesChosen) {
+      this.cartStore.addToCart(product, this.quantity[product.id] || 1);
+      console.log("addToCart() invoked, quantity: "+this.quantity[product.id]);
+    } else {
+      $('#chooseDateModal').modal();
+    }
   }
 
   getProductData() {
