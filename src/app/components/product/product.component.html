@@ -8,13 +8,13 @@
     <div class="col-sm-3">
       <div class="startReservation">
         <h5>Początek rezerwacji</h5>
-        <sample-date-picker-normal></sample-date-picker-normal>
+        <sample-date-picker-normal id="startDP"></sample-date-picker-normal>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="stopReservation">
         <h5>Koniec rezerwacji</h5>
-        <sample-date-picker-normal></sample-date-picker-normal>
+        <sample-date-picker-normal id="endDP"></sample-date-picker-normal>
       </div>
     </div>
     <div class="col-sm-2">
@@ -164,4 +164,20 @@
       });
     });
   </script>
+</div>
+
+<div id="chooseDateModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Nie wybrano daty</h4>
+      </div>
+      <div class="modal-body">
+        <p>Aby zarezerwować sprzęt, musisz najpierw wybrać termin rezerwacji!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" routerLink="/">OK</button>
+      </div>
+    </div>
+  </div>
 </div>
